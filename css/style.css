@@ -537,6 +537,88 @@ em, .italic-accent {
   margin-top: 12px;
 }
 
+/* ---------- HEADER: Full-width cell nav (Renew-style) ---------- */
+.header, .header--solid { padding: 0; }
+
+.header__inner {
+  display: flex;
+  max-width: none;
+  padding: 0;
+  gap: 0;
+}
+
+.header__logo { display: none; }
+
+.header__nav-left, .header__nav-right {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+
+.header__nav-right { justify-content: stretch; }
+
+/* Nav items = equal-width bordered cells */
+.header__nav-left > *,
+.header__nav-right > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 8px;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Strip inner link borders inside dropdowns */
+.dropdown > .header__link { border: none; padding: 0; margin: 0; }
+
+/* Cell borders — light theme (homepage) */
+.header--transparent[data-theme="light"] .header__nav-left > *,
+.header--transparent[data-theme="light"] .header__nav-right > * {
+  border: 1px solid rgba(45, 42, 62, 0.12);
+  margin-right: -1px;
+  color: var(--text-primary);
+}
+
+/* Cell borders — dark theme (subpages) */
+.header--transparent:not([data-theme]) .header__nav-left > *,
+.header--transparent:not([data-theme]) .header__nav-right > * {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-right: -1px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cell borders — solid state (scrolled) */
+.header--solid .header__nav-left > *,
+.header--solid .header__nav-right > * {
+  border: 1px solid rgba(45, 42, 62, 0.12);
+  margin-right: -1px;
+  color: var(--text-primary);
+}
+
+/* CTA cell — gold background */
+.header__nav-right .btn.header__cta {
+  background: var(--accent-gold);
+  color: #fff;
+  border-radius: 0;
+  border-color: var(--accent-gold);
+  padding: 16px 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  box-shadow: none;
+}
+
+.header__nav-right .btn.header__cta:hover {
+  background: var(--accent-gold-hover);
+  transform: none;
+}
+
+/* Social icons cell */
+.header__nav-right .header__social-icons { gap: 12px; }
+
+/* Lang toggle cell — override pill shape */
+.header__nav-right > .lang-toggle { border-radius: 0; }
+
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
@@ -672,7 +754,7 @@ em, .italic-accent {
 
 /* Portrait — subtle oval, no border (Renew-style) */
 .hero__oval {
-  width: clamp(150px, 16vw, 220px);
+  width: clamp(188px, 20vw, 275px);
   aspect-ratio: 9/10;
   border-radius: 50%;
   overflow: hidden;
@@ -1984,11 +2066,20 @@ h1, h2, h3 {
     display: flex;
   }
 
+  .header, .header--solid {
+    padding: 12px 0;
+  }
+
   .header__inner {
+    display: grid;
     grid-template-columns: auto 1fr auto;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
   .header__logo {
+    display: block;
     order: 2;
     text-align: center;
   }
