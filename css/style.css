@@ -781,11 +781,11 @@ em, .italic-accent {
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-heading);
-  font-size: clamp(8rem, 18vw, 16rem);
+  font-size: clamp(8rem, 20vw, 18rem);
   font-weight: 600;
   text-transform: uppercase;
   color: var(--text-primary);
-  opacity: 0.04;
+  opacity: 0.05;
   white-space: nowrap;
   pointer-events: none;
   letter-spacing: 0.05em;
@@ -814,6 +814,7 @@ em, .italic-accent {
   margin-bottom: 24px;
   position: relative;
   z-index: 1;
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .pain__header-text p {
@@ -846,7 +847,7 @@ em, .italic-accent {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 3/4.5;
+  aspect-ratio: 3/5;
   cursor: default;
   transition: transform 0.4s var(--ease-smooth);
 }
