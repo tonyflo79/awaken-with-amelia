@@ -284,40 +284,12 @@ em, .italic-accent {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.3s;
+  transition: color 0.3s, background 0.3s;
   position: relative;
   white-space: nowrap;
-  padding: 17px 16px;
-  border: 1px solid transparent;
-  margin-right: -1px;
-}
-
-.header--transparent .header__link {
-  color: rgba(255,255,255,0.85);
-  border-color: rgba(255,255,255,0.15);
-}
-
-.header--transparent .header__link:hover {
-  color: #fff;
-}
-
-.header--solid .header__link {
-  color: var(--text-primary);
-  border-color: rgba(45, 42, 62, 0.15);
-}
-
-.header--solid .header__link:hover {
-  color: var(--accent-sage);
-}
-
-/* Light theme header (for pages with light hero backgrounds) */
-.header--transparent[data-theme="light"] .header__link {
-  color: var(--text-primary);
-  border-color: rgba(45, 42, 62, 0.15);
-}
-
-.header--transparent[data-theme="light"] .header__link:hover {
-  color: var(--accent-sage);
+  padding: 0;
+  border: none;
+  margin: 0;
 }
 
 .header--transparent[data-theme="light"] .header__logo a {
@@ -537,63 +509,115 @@ em, .italic-accent {
   margin-top: 12px;
 }
 
-/* ---------- HEADER: Full-width cell nav (Renew-style) ---------- */
+/* ---------- HEADER: Renew 2-row grid nav ---------- */
+/* Renew uses: grid(1fr auto), nav items flex-grow:1 with border-right,
+   actions auto-width with border-left, logo row 2 spanning both cols */
 .header, .header--solid { padding: 0; }
 
 .header__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   max-width: none;
   padding: 0;
   gap: 0;
 }
 
-.header__logo { display: none; }
+/* Logo → Row 2, spans both columns */
+.header__logo {
+  display: block;
+  grid-area: 2 / 1 / auto / span 2;
+  text-align: center;
+  padding: 14px 8px;
+}
 
-.header__nav-left, .header__nav-right {
+/* Nav links → Row 1, Col 1 */
+.header__nav-left {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
-  flex: 1;
   gap: 0;
 }
 
-.header__nav-right { justify-content: stretch; }
+/* Actions → Row 1, Col 2 */
+.header__nav-right {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  gap: 0;
+  justify-content: flex-end;
+}
 
-/* Nav items = equal-width bordered cells */
-.header__nav-left > *,
-.header__nav-right > * {
+/* Nav items = equal-width cells with border-right (Renew: flex-grow:1) */
+.header__nav-left > * {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 8px;
+  padding: 17px 8px;
   white-space: nowrap;
   transition: background 0.3s, color 0.3s;
 }
 
-/* Strip inner link borders inside dropdowns */
+/* Action items = auto-width, compact */
+.header__nav-right > * {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 16px;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Strip inner link padding inside dropdowns */
 .dropdown > .header__link { border: none; padding: 0; margin: 0; }
 
-/* Cell borders — light theme (homepage) */
-.header--transparent[data-theme="light"] .header__nav-left > *,
-.header--transparent[data-theme="light"] .header__nav-right > * {
-  border: 1px solid rgba(45, 42, 62, 0.12);
-  margin-right: -1px;
+/* ---- Light theme borders (homepage) ---- */
+.header--transparent[data-theme="light"] .header__nav-left > * {
+  border-right: 1px solid rgba(45, 42, 62, 0.12);
   color: var(--text-primary);
 }
+.header--transparent[data-theme="light"] .header__nav-left > *:last-child { border-right: none; }
+.header--transparent[data-theme="light"] .header__nav-right {
+  border-left: 1px solid rgba(45, 42, 62, 0.12);
+}
+.header--transparent[data-theme="light"] .header__nav-right > * { color: var(--text-primary); }
+.header--transparent[data-theme="light"] .header__logo {
+  border-top: 1px solid rgba(45, 42, 62, 0.12);
+}
 
-/* Cell borders — dark theme (subpages) */
-.header--transparent:not([data-theme]) .header__nav-left > *,
-.header--transparent:not([data-theme]) .header__nav-right > * {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  margin-right: -1px;
+/* ---- Dark theme borders (subpages) ---- */
+.header--transparent:not([data-theme]) .header__nav-left > * {
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.85);
 }
+.header--transparent:not([data-theme]) .header__nav-left > *:last-child { border-right: none; }
+.header--transparent:not([data-theme]) .header__nav-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header--transparent:not([data-theme]) .header__nav-right > * { color: rgba(255, 255, 255, 0.85); }
+.header--transparent:not([data-theme]) .header__logo {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-/* Cell borders — solid state (scrolled) */
-.header--solid .header__nav-left > *,
-.header--solid .header__nav-right > * {
-  border: 1px solid rgba(45, 42, 62, 0.12);
-  margin-right: -1px;
+/* ---- Solid state borders (scrolled) ---- */
+.header--solid .header__nav-left > * {
+  border-right: 1px solid rgba(45, 42, 62, 0.12);
   color: var(--text-primary);
+}
+.header--solid .header__nav-left > *:last-child { border-right: none; }
+.header--solid .header__nav-right {
+  border-left: 1px solid rgba(45, 42, 62, 0.12);
+}
+.header--solid .header__nav-right > * { color: var(--text-primary); }
+.header--solid .header__logo {
+  border-top: 1px solid rgba(45, 42, 62, 0.12);
+}
+
+/* Nav hover — fill with accent color (Renew: --hover-bkg) */
+.header__nav-left > *:hover {
+  background: var(--accent-gold);
+  color: #fff !important;
 }
 
 /* CTA cell — gold background */
@@ -601,22 +625,20 @@ em, .italic-accent {
   background: var(--accent-gold);
   color: #fff;
   border-radius: 0;
-  border-color: var(--accent-gold);
-  padding: 16px 8px;
+  padding: 17px 24px;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   box-shadow: none;
 }
-
 .header__nav-right .btn.header__cta:hover {
   background: var(--accent-gold-hover);
   transform: none;
 }
 
-/* Social icons cell */
+/* Social icons */
 .header__nav-right .header__social-icons { gap: 12px; }
 
-/* Lang toggle cell — override pill shape */
+/* Lang toggle — square in nav, not pill */
 .header__nav-right > .lang-toggle { border-radius: 0; }
 
 /* ---------- HERO ---------- */
@@ -721,19 +743,16 @@ em, .italic-accent {
   padding: 0 3%;
 }
 
-/* The image/video container — light bg for "Wash Out" filter effect
-   Renew filter 6 "Wash Out" = video at reduced opacity on light background
-   creates a soft, faded, washed-out look (NOT dark). */
+/* The image/video container — dark bg, rounded corners, cinematic feel */
 .hero__rect {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: var(--bg-cream);
+  background: var(--bg-dark);
+  border-radius: 30px;
 }
 
-/* Video — "Wash Out" effect: semi-transparent video on light background.
-   Renew uses opacity(40%) but their source is a very bright lifestyle image.
-   Amelia's nature video is darker, so we use 55% for similar visual weight. */
+/* Video — visible with dark moody feel for white text readability */
 .hero__rect video,
 .hero__rect > img {
   position: absolute;
@@ -742,15 +761,15 @@ em, .italic-accent {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: opacity(55%);
+  filter: opacity(75%);
 }
 
-/* Overlay — Renew imageOverlayOpacity: 0.15 */
+/* Overlay — subtle darkening for text contrast */
 .hero__rect::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(26, 26, 46, 0.3);
   z-index: 1;
   pointer-events: none;
 }
@@ -807,9 +826,9 @@ em, .italic-accent {
   justify-content: center;
 }
 
-/* Heading styles — dark text on washed-out light background (like Renew) */
+/* Heading styles — white text on dark cinematic background */
 .hero--home h1 {
-  color: var(--text-primary);
+  color: #fff;
   margin-bottom: 0;
   font-size: clamp(3rem, 8vw, 7rem);
   text-transform: uppercase;
@@ -841,9 +860,9 @@ em, .italic-accent {
   object-fit: cover;
 }
 
-/* Label — monospace, uppercase, dark text */
+/* Label — monospace, uppercase, white */
 .hero--home .hero__pre {
-  color: var(--text-primary);
+  color: var(--accent-gold);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
@@ -851,22 +870,34 @@ em, .italic-accent {
   margin-bottom: 12px;
 }
 
-/* Body text — dark on washed-out background */
+/* Body text — white on dark background */
 .hero--home .hero__sub {
-  color: var(--text-primary);
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
   max-width: 520px;
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 0;
 }
 
-/* CTA button — pill shape (Renew border-radius: 300px) */
+/* CTA button — thinner pill with arrow (Renew-style) */
 .hero--home .hero__grid-cta .btn {
   background: var(--accent-gold);
   color: #fff;
   border: none;
   border-radius: 300px;
+  padding: 12px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.hero--home .hero__grid-cta .btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .hero--home .hero__grid-cta .btn:hover {
@@ -892,10 +923,10 @@ em, .italic-accent {
   transform: scaleY(-1);
 }
 
-/* ---------- SECTION: INTRO — Dark background (Renew-style) ---------- */
+/* ---------- SECTION: INTRO — Cream background (seamless from hero) ---------- */
 .section-intro {
   padding: var(--section-pad) 0;
-  background: var(--text-primary);
+  background: var(--bg-cream);
   position: relative;
   overflow: hidden;
 }
@@ -910,7 +941,7 @@ em, .italic-accent {
   font-size: clamp(8rem, 22vw, 22rem);
   font-weight: 600;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.035);
+  color: rgba(45, 42, 62, 0.04);
   white-space: nowrap;
   pointer-events: none;
   letter-spacing: 0.05em;
@@ -928,7 +959,7 @@ em, .italic-accent {
 }
 
 .intro__image {
-  border-radius: 16px;
+  border-radius: 90px;
   overflow: hidden;
   aspect-ratio: 3/4;
 }
@@ -941,16 +972,16 @@ em, .italic-accent {
 
 .intro__text h2 {
   margin-bottom: 24px;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .intro__text p {
-  color: rgba(255,255,255,0.75);
-  opacity: 1;
+  color: var(--text-primary);
+  opacity: 0.75;
 }
 
 .section-intro .eyebrow {
-  color: var(--accent-gold);
+  color: var(--accent-sage);
 }
 
 .section-intro .link-arrow {
@@ -2170,6 +2201,8 @@ h1, h2, h3 {
 
   .header__logo {
     display: block;
+    grid-area: auto;
+    border-top: none;
     order: 2;
     text-align: center;
   }
