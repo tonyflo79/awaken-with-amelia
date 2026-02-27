@@ -42,10 +42,10 @@
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --font-mono: 'DM Mono', monospace;
 
-  /* Spacing */
-  --section-pad: 120px;
-  --section-pad-mobile: 64px;
-  --container-max: 1200px;
+  /* Spacing — Renew uses vmax-based section padding */
+  --section-pad: 8vmax;
+  --section-pad-mobile: 5vmax;
+  --container-max: 1500px;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Renew animation settings */
@@ -125,7 +125,7 @@ em, .italic-accent {
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--sqs-site-gutter);
 }
 
 
@@ -708,29 +708,35 @@ em, .italic-accent {
    S2. INTRO — Cream bg, grid: image left, text right
    (Renew: "Nice to meet you" — white-bold, full-bleed)
    ============================================ */
+/* Renew S2: white-bold, full-bleed, section-height--small
+   Grid: image cols 2-13 (46%), text cols 15-25 (42%), 21 rows
+   Renew section-height--small ≈ 40vh min-height with auto overflow */
 .section-intro {
-  padding: var(--section-pad) 0;
+  padding: 4vmax 0 6vmax;
   background: var(--bg-cream);
   position: relative;
   overflow: hidden;
 }
 .intro__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  /* Renew proportions: 11 cols image, 2 col gap, 10 cols text out of 24 */
+  grid-template-columns: 11fr 2fr 10fr;
   align-items: center;
   position: relative;
   z-index: 1;
 }
 .intro__image {
+  grid-column: 1;
   border-radius: 0;
   overflow: hidden;
-  aspect-ratio: 3/4;
 }
 .intro__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.intro__text {
+  grid-column: 3;
 }
 .intro__text h2 { margin-bottom: 24px; color: var(--text-primary); }
 .intro__text p { color: var(--text-primary); opacity: 0.75; }
@@ -738,24 +744,25 @@ em, .italic-accent {
 
 /* ============================================
    S3. PAIN — Warm bg, heading+CTA top, 4 tall image cards
-   (Renew: light theme, full-bleed)
+   (Renew: light theme, full-bleed, 26 rows, gap 11/24px)
+   Grid: heading cols 2-13, CTA cols 14-26, cards 4 equal
    ============================================ */
 .section-pain {
-  padding: var(--section-pad) 0;
+  padding: 6vmax 0;
   background: var(--bg-warm);
   position: relative;
   overflow: hidden;
 }
 .pain__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
   margin-bottom: 48px;
   position: relative;
   z-index: 1;
 }
-.pain__header-text { max-width: 600px; }
+.pain__header-text { }
 .section-pain h2 {
   color: var(--text-primary);
   text-align: left;
@@ -767,14 +774,19 @@ em, .italic-accent {
   opacity: 0.7;
   font-size: 0.95rem;
 }
-.pain__header-cta { flex-shrink: 0; padding-top: 8px; }
+.pain__header-cta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
 .pain__header-cta .btn { white-space: nowrap; }
 .pain__btn-arrow span { font-size: 1.2rem; }
 
 .pain__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   position: relative;
   z-index: 1;
 }
@@ -783,7 +795,7 @@ em, .italic-accent {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 3/5;
+  aspect-ratio: 6/11;
   cursor: default;
   transition: transform 0.4s var(--ease);
 }
@@ -852,8 +864,8 @@ em, .italic-accent {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: var(--section-pad) 24px;
-  padding-bottom: calc(var(--section-pad) + 60px); /* room for curve */
+  padding: 12vmax var(--sqs-site-gutter);
+  padding-bottom: calc(12vmax + 120px); /* room for curve */
   max-width: 900px;
   margin: 0 auto;
 }
@@ -882,7 +894,7 @@ em, .italic-accent {
 }
 .section-divider-curve svg {
   width: 100%;
-  height: 120px;
+  height: 12vw;
   display: block;
 }
 
@@ -906,7 +918,7 @@ em, .italic-accent {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: var(--section-pad) 24px;
+  padding: 10vmax var(--sqs-site-gutter);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -940,12 +952,12 @@ em, .italic-accent {
 .section-value-text {
   position: relative;
   background: var(--bg-dark);
-  padding: var(--section-pad) 24px;
+  padding: 6vmax var(--sqs-site-gutter);
   text-align: center;
   overflow: hidden;
 }
 .section-value-text__content {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .section-value-text h2,
@@ -1000,7 +1012,7 @@ em, .italic-accent {
    (Renew: sections 12, 14)
    ============================================ */
 .section-spacer {
-  height: 80px;
+  height: 4vmax;
   background: var(--bg-cream);
 }
 .section-spacer--warm { background: var(--bg-warm); }
@@ -1022,7 +1034,7 @@ em, .italic-accent {
    (Renew: light-bold, "Client stories")
    ============================================ */
 .section-stories-header {
-  padding: 80px 0 0;
+  padding: 6vmax 0 2vmax;
   background: var(--bg-warm);
   text-align: center;
 }
@@ -1039,7 +1051,7 @@ em, .italic-accent {
    (Renew: light-bold, image + card grid, nav arrows)
    ============================================ */
 .section-stories-carousel {
-  padding: 40px 0 80px;
+  padding: 2vmax 0 6.6vmax;
   background: var(--bg-warm);
 }
 .stories-slider__cta {
@@ -1269,12 +1281,12 @@ em, .italic-accent {
   position: relative;
 }
 
+/* Renew S8-S11: black-bold, background-width--inset, section-height--large
+   Base: 6 rows, heading cols 8-20 (sticky). Cards: 11 rows each, content cols 5-17. */
 .section-stack {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  /* Inset: padding around the bg (Renew: background-width--inset) */
-  padding: 0 var(--sqs-site-gutter);
 }
 
 /* Base section: sticky heading that stays centered */
@@ -1287,33 +1299,34 @@ em, .italic-accent {
 /* Card sections: overlap the sticky base */
 .section-stack--card {
   position: relative;
-  z-index: 2; /* JS will increment per card: 2, 3, 4 */
+  z-index: 2;
 }
 
-/* Inset background with rounded corners and dark overlay */
+/* Inset background (Renew: background-width--inset with sqs-site-gutter padding) */
 .section-stack__bg {
   position: absolute;
-  inset: 0 var(--sqs-site-gutter);
+  inset: 0;
+  margin: 0 var(--sqs-site-gutter);
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
+  border-radius: 30px;
 }
 .section-stack__bg::after {
   content: '';
   position: absolute; inset: 0;
   background: var(--overlay-dark);
-  border-radius: 12px;
+  border-radius: 30px;
 }
 
-/* Content overlaid on cards */
+/* Content overlaid on cards — Renew cols 5-17 out of 24 = ~50% width, left-aligned */
 .section-stack__content {
   position: relative;
   z-index: 2;
   max-width: 700px;
-  padding: 120px 48px;
+  padding: 10vmax calc(var(--sqs-site-gutter) + 6vw);
 }
 
-/* Sticky base content: centered vertically */
+/* Sticky base content: centered vertically — Renew cols 8-20 = centered ~50% */
 .section-stack__content--sticky {
   display: flex;
   flex-direction: column;
@@ -1322,6 +1335,7 @@ em, .italic-accent {
   min-height: 100vh;
   max-width: none;
   text-align: center;
+  padding: 10vmax var(--sqs-site-gutter);
 }
 
 /* Large number label (Renew: overlapping number badges on cards) */
@@ -1334,9 +1348,16 @@ em, .italic-accent {
   margin-bottom: 16px;
 }
 
-.section-stack__content h2,
+.section-stack__content h2 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
 .section-stack__content h3 {
   color: #fff;
+  font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 /* Stacking card content styles */
@@ -1387,11 +1408,9 @@ em, .italic-accent {
 .section-service__content {
   position: relative;
   z-index: 2;
-  padding: var(--section-pad) 0;
+  padding: 10vmax var(--sqs-site-gutter);
   max-width: var(--container-max);
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 .section-service__number {
   font-family: var(--font-heading);
@@ -1443,24 +1462,26 @@ em, .italic-accent {
    S13. TESTIMONIALS SCROLL — Large heading + vertical card list
    (Renew: white theme, user-items-list)
    ============================================ */
+/* Renew S13: white theme, 39 rows. Sticky heading cols 5-23, cards positioned throughout. */
 .section-testimonials-scroll {
-  padding: 120px 0;
+  padding: 8vmax 0;
   background: var(--bg-cream);
 }
 .testimonials-scroll__heading {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(3.5rem, 10vw, 9rem);
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 8vmax;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  line-height: 0.95;
 }
 .testimonials-scroll__list {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 0 24px;
+  gap: 40px;
+  padding: 0 var(--sqs-site-gutter);
 }
 .testimonials-scroll__card {
   background: #fff;
@@ -1562,7 +1583,7 @@ em, .italic-accent {
    ============================================ */
 .section-banner {
   position: relative;
-  padding: 100px 24px;
+  padding: 10vmax var(--sqs-site-gutter);
   text-align: center;
   overflow: hidden;
 }
@@ -1590,20 +1611,21 @@ em, .italic-accent {
    S16. CLUB / FREE RESOURCES — Full bg, overlay, image+links
    (Renew: light-bold theme)
    ============================================ */
-/* Club section: Renew "Free Resources" pattern — light-bold, image+text grid */
+/* Renew S16: light-bold, 12 rows. Image cols 4-14, text cols 15-23, gap 0/11px */
 .section-club {
-  padding: var(--section-pad) 0;
+  padding: 6vmax 0;
   background: var(--bg-warm);
   overflow: hidden;
 }
 .club__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  /* Renew: image 10 cols, gap 1 col, text 8 cols out of 24 */
+  grid-template-columns: 10fr 1fr 8fr;
   align-items: center;
 }
 .club__image {
-  border-radius: 16px;
+  grid-column: 1;
+  border-radius: 0;
   overflow: hidden;
   aspect-ratio: 3/4;
 }
@@ -1611,6 +1633,9 @@ em, .italic-accent {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.club__content {
+  grid-column: 3;
 }
 .club__content h2 {
   color: var(--text-primary);
@@ -1657,7 +1682,7 @@ em, .italic-accent {
    (Renew: edge-to-edge, margin: 0)
    ============================================ */
 .section-instagram {
-  padding: 80px 0 0;
+  padding: 0;
   background: var(--bg-warm);
   text-align: center;
 }
@@ -1718,7 +1743,7 @@ em, .italic-accent {
    ============================================ */
 .section-final-cta {
   position: relative;
-  padding: var(--section-pad) 0;
+  padding: 10vmax 0;
   text-align: center;
   overflow: hidden;
 }
@@ -1735,9 +1760,9 @@ em, .italic-accent {
 .section-final-cta__content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--sqs-site-gutter);
 }
 .section-final-cta h1 {
   color: var(--accent);
@@ -2043,7 +2068,8 @@ em, .italic-accent {
 
 /* 1024px: tablet adjustments */
 @media (max-width: 1024px) {
-  .pain__header { flex-direction: column; gap: 24px; }
+  .pain__header { grid-template-columns: 1fr; gap: 24px; }
+  .pain__header-cta { justify-content: flex-start; }
   .pain__grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials__grid { grid-template-columns: 1fr; gap: 40px; }
   .testimonials__heading { position: static; text-align: center; }
@@ -2052,7 +2078,7 @@ em, .italic-accent {
 
 /* 768px: mobile breakpoint (Renew primary) */
 @media (max-width: 768px) {
-  :root { --section-pad: 80px; }
+  :root { --section-pad: 5vmax; }
 
   /* ---- Header: Mobile 3-column grid (burger | title | actions) ---- */
   .header__nav-left,
@@ -2103,16 +2129,19 @@ em, .italic-accent {
 
   /* ---- Sections ---- */
   .intro__grid { grid-template-columns: 1fr; gap: 40px; }
-  .intro__image { max-width: 360px; margin: 0 auto; }
+  .intro__image { grid-column: 1; max-width: 360px; margin: 0 auto; }
+  .intro__text { grid-column: 1; }
+  .pain__header { grid-template-columns: 1fr; }
+  .pain__header-cta { justify-content: flex-start; }
   .pain__grid { grid-template-columns: 1fr; }
 
   /* ---- Value Video: shorter on mobile ---- */
   .section-value-video { min-height: 50vh; }
-  .section-value-video__content { padding: 80px 16px; }
+  .section-value-video__content { padding: 8vmax var(--sqs-mobile-site-gutter); padding-bottom: calc(8vmax + 80px); }
 
   /* ---- Value Text: tighter on mobile ---- */
-  .section-value-text { padding: 80px 16px; }
-  .section-value__content { padding: var(--section-pad) 16px; }
+  .section-value-text { padding: 5vmax var(--sqs-mobile-site-gutter); }
+  .section-value__content { padding: var(--section-pad) var(--sqs-mobile-site-gutter); }
   .section-value h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
 
   /* ---- Stories slider: single column on mobile ---- */
@@ -2126,23 +2155,26 @@ em, .italic-accent {
 
   /* ---- Club grid: single column on mobile ---- */
   .club__grid { grid-template-columns: 1fr; gap: 40px; }
-  .club__image { max-width: 360px; margin: 0 auto; }
+  .club__image { grid-column: 1; max-width: 360px; margin: 0 auto; }
+  .club__content { grid-column: 1; }
 
   /* ---- Stacking cards: no sticky on mobile, vertical scroll ---- */
-  .section-stack { min-height: auto; padding: 0 var(--sqs-mobile-site-gutter); }
+  .section-stack { min-height: auto; }
   .section-stack--base {
     position: relative;
     top: auto;
   }
   .section-stack__bg {
-    inset: 0 var(--sqs-mobile-site-gutter);
+    margin: 0 var(--sqs-mobile-site-gutter);
+    border-radius: 20px;
   }
-  .section-stack__content { padding: 80px 24px; }
-  .section-stack__content--sticky { min-height: 60vh; }
+  .section-stack__bg::after { border-radius: 20px; }
+  .section-stack__content { padding: 8vmax calc(var(--sqs-mobile-site-gutter) + 4vw); }
+  .section-stack__content--sticky { min-height: 60vh; padding: 8vmax var(--sqs-mobile-site-gutter); }
 
   /* ---- Testimonials scroll: tighter padding ---- */
-  .section-testimonials-scroll { padding: 80px 0; }
-  .testimonials-scroll__heading { font-size: clamp(2.5rem, 8vw, 5rem); }
+  .section-testimonials-scroll { padding: 5vmax 0; }
+  .testimonials-scroll__heading { font-size: clamp(2.5rem, 12vw, 6rem); margin-bottom: 5vmax; }
 
   /* ---- Instagram: 3 columns on mobile ---- */
   .section-instagram .instagram__grid { grid-template-columns: repeat(3, 1fr); }
@@ -2159,17 +2191,16 @@ em, .italic-accent {
 
 /* 480px: small mobile */
 @media (max-width: 480px) {
-  :root { --section-pad: 56px; }
+  :root { --section-pad: 4vmax; }
   h1 { font-size: clamp(2rem, 8vw, 3rem); }
   .hero h1 { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .btn { padding: 14px 32px; font-size: 0.85rem; }
   .story-card { flex: 0 0 92%; min-width: 260px; }
   .section-instagram .instagram__grid { grid-template-columns: repeat(3, 1fr); }
 
-  /* Stacking cards: full-bleed on small mobile */
-  .section-stack { padding: 0; }
-  .section-stack__bg { inset: 0; border-radius: 0; }
-  .section-stack__bg::after { border-radius: 0; }
+  /* Stacking cards: tighter border radius on small mobile */
+  .section-stack__bg { margin: 0 12px; border-radius: 16px; }
+  .section-stack__bg::after { border-radius: 16px; }
 
   /* Stories slider: tighter */
   .stories-slider__card { padding: 28px 20px; }
