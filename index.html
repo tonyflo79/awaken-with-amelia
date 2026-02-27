@@ -13,10 +13,10 @@
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
+  <!-- ========== HEADER (Renew 2-row grid) ========== -->
   <header class="header header--transparent" data-theme="light">
     <div class="header__inner">
-      <!-- Left nav -->
+      <!-- Left nav — Row 1, Col 1 -->
       <nav class="header__nav-left">
         <a href="my-story.html" class="header__link" data-en="My Story" data-ru="Моя история">My Story</a>
         <div class="dropdown">
@@ -37,12 +37,12 @@
         </div>
       </nav>
 
-      <!-- Center logo -->
+      <!-- Center logo — Row 2, spans both columns -->
       <div class="header__logo">
         <a href="index.html" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</a>
       </div>
 
-      <!-- Right nav -->
+      <!-- Right nav — Row 1, Col 2 -->
       <nav class="header__nav-right">
         <div class="header__social-icons">
           <a href="https://instagram.com/bybonitesa" target="_blank" class="header__social-icon" aria-label="Instagram">
@@ -96,7 +96,7 @@
     <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary mobile-menu__cta" data-en="Book a Session" data-ru="Записаться">Book a Session</a>
   </div>
 
-  <!-- ========== 1. HERO — CSS Grid layout matching Renew (overlapping elements) ========== -->
+  <!-- ========== 1. HERO — CSS Grid, video bg, inset, oval portrait ========== -->
   <section class="hero hero--home">
     <div class="hero__brand" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</div>
 
@@ -126,12 +126,15 @@
     </div>
   </section>
 
-  <!-- ========== 2. INTRODUCTION — Dark background with faded text (Renew-style) ========== -->
+  <!-- ========== 2. INTRO — Cream bg, image left, text right ========== -->
   <section class="section-intro">
     <div class="intro__bg-text" data-en="AWAKEN" data-ru="ПРОБУЖДЕНИЕ">AWAKEN</div>
     <div class="container">
       <div class="intro__grid">
-        <div class="intro__text fade-in-left">
+        <div class="intro__image fade-in-left">
+          <img src="assets/portrait-natural.jpg" alt="Amelia Lira">
+        </div>
+        <div class="intro__text fade-in-right">
           <span class="eyebrow" data-en="Nice to meet you" data-ru="Приятно познакомиться">Nice to meet you</span>
           <h2 data-en="I'm Amelia" data-ru="Я — Амелия">I'm Amelia</h2>
           <p data-en="I see what most people can't. And I help you see it too." data-ru="Я вижу то, что большинство не видит. И помогаю тебе увидеть тоже.">I see what most people can't. And I help you see it too.</p>
@@ -139,17 +142,13 @@
           <p data-en="But here's what matters: I don't fix you. You were never broken.&lt;br&gt;&lt;br&gt;I help you remember who you actually are. And when you remember — everything changes." data-ru="Но вот что важно: я тебя не чиню. Ты никогда не была сломана.&lt;br&gt;&lt;br&gt;Я помогаю тебе вспомнить, кто ты на самом деле. А когда вспоминаешь — меняется всё.">But here's what matters: I don't fix you. You were never broken.<br><br>I help you remember who you actually are. And when you remember — everything changes.</p>
           <a href="my-story.html" class="link-arrow" data-en="Read My Full Story" data-ru="Читать мою историю">Read My Full Story</a>
         </div>
-        <div class="intro__image fade-in-right">
-          <img src="assets/portrait-natural.jpg" alt="Amelia Lira">
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== 3. PAIN POINTS — Renew-style layout (left text + right CTA, 4 image cards) ========== -->
+  <!-- ========== 3. PAIN — Warm bg, heading+CTA top, 4 tall image cards ========== -->
   <section class="section-pain">
     <div class="container">
-      <!-- Top row: heading + text LEFT, CTA button RIGHT -->
       <div class="pain__header">
         <div class="pain__header-text fade-in">
           <h2 data-en="Does This Sound Like &lt;em&gt;You&lt;/em&gt;?" data-ru="Узнаёшь &lt;em&gt;себя&lt;/em&gt;?">Does This Sound Like <em>You</em>?</h2>
@@ -159,7 +158,6 @@
           <a href="services.html" class="btn btn--outline pain__btn-arrow" data-en="View My Offerings" data-ru="Мои услуги">View My Offerings <span>+</span></a>
         </div>
       </div>
-      <!-- 4 tall image cards with italic labels -->
       <div class="pain__grid stagger-children">
         <div class="pain__card">
           <div class="pain__card-img" style="background-color: #B8A9C9;"></div>
@@ -181,17 +179,11 @@
     </div>
   </section>
 
-  <!-- ========== 4. VALUE / POWER — Rectangular image on light background (Renew-style) ========== -->
+  <!-- ========== 4. VALUE — Full-bleed DARK, gold-lion.jpg bg, 0.15 overlay ========== -->
   <section class="section-value">
-    <!-- Rectangular image with heading overlaid -->
-    <div class="section-value__rect">
-      <img src="assets/gold-lion.jpg" alt="Your Soul Already Knows">
-      <div class="section-value__rect-heading">
-        <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
-      </div>
-    </div>
-    <!-- Text content below the rectangle -->
-    <div class="section-value__content">
+    <div class="section-value__bg-img" style="background-image: url('assets/gold-lion.jpg');"></div>
+    <div class="section-value__content fade-in">
+      <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
       <p class="section-value__sub" data-en="This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget." data-ru="Это не терапия. Это не коучинг. Это вспоминание того, кем ты была до того, как мир заставил тебя&nbsp;забыть.">This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget.</p>
       <div class="typewriter-text"></div>
       <div class="section-value__cta">
@@ -200,7 +192,10 @@
     </div>
   </section>
 
-  <!-- ========== 5. CLIENT STORIES CAROUSEL ========== -->
+  <!-- ========== 5. DIVIDER — Dark strip ========== -->
+  <div class="section-divider"></div>
+
+  <!-- ========== 6. STORIES — Warm bg, carousel ========== -->
   <section class="section-stories">
     <div class="container">
       <h2 class="fade-in" data-en="What Happens When You Remember" data-ru="Что происходит, когда ты вспоминаешь">What Happens When You Remember</h2>
@@ -230,74 +225,60 @@
     </div>
   </section>
 
-  <!-- ========== 6. TRANSITION BANNER ========== -->
+  <!-- ========== 7. BANNER — venus-seashell.jpg bg, 0.65 overlay, gold heading ========== -->
   <section class="section-banner">
-    <div class="section-banner__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #1A1A2E;"></div>
+    <div class="section-banner__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #000;"></div>
     <div class="section-banner__content">
       <h2 data-en="It's time to meet who you really are" data-ru="Пора встретить ту, кто ты на самом деле">It's time to meet who you really are</h2>
     </div>
   </section>
 
-  <!-- ========== 7-9. SERVICE CARDS ========== -->
-  <section class="section-services">
-    <div class="container">
-      <h2 class="fade-in" data-en="How We Work Together" data-ru="Как мы работаем вместе">How We Work Together</h2>
-      <div class="services__grid stagger-children">
-        <!-- Card 1: Healing -->
-        <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
-            <img src="assets/crystal-ethereal.jpg" alt="Multidimensional Healing" style="background-color: #2D2A3E;">
-            <span class="service-card__number">01</span>
-          </div>
-          <div class="service-card__body">
-            <h3 class="service-card__title" data-en="Multidimensional Healing" data-ru="Многомерное Исцеление">Multidimensional Healing</h3>
-            <p class="service-card__subtitle" data-en="Find the root. Heal it at the source." data-ru="Найти корень. Исцелить у источника.">Find the root. Heal it at the source.</p>
-            <p class="service-card__desc" data-en="For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone." data-ru="Когда есть конкретная боль, паттерн или блок, который не сдвигается — что бы ты ни пробовала. Мы идём к точке начала и переписываем сценарий на уровне души. Одна сессия. Первопричина. Всё.">For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone.</p>
-            <div class="service-card__footer">
-              <span class="service-card__price" data-en="From $300" data-ru="от 30 000 ₽">From $300</span>
-              <a href="healing.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Awakening -->
-        <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
-            <img src="assets/hero-cosmic.jpg" alt="Awakening Session" style="background-color: #2D2A3E;">
-            <span class="service-card__number">02</span>
-          </div>
-          <div class="service-card__body">
-            <h3 class="service-card__title" data-en="Awakening" data-ru="Пробуждение">Awakening</h3>
-            <p class="service-card__subtitle" data-en="Meet your true self. Remember your star home." data-ru="Встреча с истинным Собой. Вспоминание звёздного Дома.">Meet your true self. Remember your star home.</p>
-            <p class="service-card__desc" data-en="For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory." data-ru="Когда ты чувствуешь: «Я не совсем отсюда. У меня есть миссия — но я забыла, какая». Мы путешествуем в измерение твоей души и активируем дремлющие коды космической памяти.">For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory.</p>
-            <div class="service-card__footer">
-              <span class="service-card__price" data-en="From $500" data-ru="от 50 000 ₽">From $500</span>
-              <a href="awakening.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Program -->
-        <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
-            <img src="assets/gold-lion.jpg" alt="2-Month Program" style="background-color: #2D2A3E;">
-            <span class="service-card__number">03</span>
-          </div>
-          <div class="service-card__body">
-            <h3 class="service-card__title" data-en="2-Month Awakening Program" data-ru="Программа Пробуждение — 2 месяца">2-Month Awakening Program</h3>
-            <p class="service-card__subtitle" data-en="Full transformation. Daily support. No going back." data-ru="Полная трансформация. Ежедневная поддержка. Пути назад нет.">Full transformation. Daily support. No going back.</p>
-            <p class="service-card__desc" data-en="4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose." data-ru="4 глубинных сессии за 2 месяца, плюс 5 дней в неделю персональной поддержки. Это место, куда женщины приходят одним человеком, а уходят другим — с ясностью, силой и нерушимой связью с предназначением.">4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose.</p>
-            <div class="service-card__footer">
-              <span class="service-card__price" data-en="From $2,500" data-ru="от 250 000 ₽">From $2,500</span>
-              <a href="program.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-            </div>
-          </div>
-        </div>
+  <!-- ========== 8. SERVICE 1 — Multidimensional Healing (full-width, crystal-ethereal.jpg bg) ========== -->
+  <section class="section-service">
+    <div class="section-service__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #000;"></div>
+    <div class="section-service__content fade-in">
+      <div class="section-service__number" data-en="01" data-ru="01">01</div>
+      <h2 class="section-service__title" data-en="Multidimensional Healing" data-ru="Многомерное Исцеление">Multidimensional Healing</h2>
+      <p class="section-service__subtitle" data-en="Find the root. Heal it at the source." data-ru="Найти корень. Исцелить у источника.">Find the root. Heal it at the source.</p>
+      <p class="section-service__desc" data-en="For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone." data-ru="Когда есть конкретная боль, паттерн или блок, который не сдвигается — что бы ты ни пробовала. Мы идём к точке начала и переписываем сценарий на уровне души. Одна сессия. Первопричина. Всё.">For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone.</p>
+      <div class="section-service__footer">
+        <span class="section-service__price" data-en="From $300" data-ru="от 30 000 ₽">From $300</span>
+        <a href="healing.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== 10. STICKY TESTIMONIALS ========== -->
+  <!-- ========== 9. SERVICE 2 — Awakening (full-width, hero-cosmic.jpg bg) ========== -->
+  <section class="section-service">
+    <div class="section-service__bg" style="background-image: url('assets/hero-cosmic.jpg'); background-color: #000;"></div>
+    <div class="section-service__content fade-in">
+      <div class="section-service__number" data-en="02" data-ru="02">02</div>
+      <h2 class="section-service__title" data-en="Awakening" data-ru="Пробуждение">Awakening</h2>
+      <p class="section-service__subtitle" data-en="Meet your true self. Remember your star home." data-ru="Встреча с истинным Собой. Вспоминание звёздного Дома.">Meet your true self. Remember your star home.</p>
+      <p class="section-service__desc" data-en="For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory." data-ru="Когда ты чувствуешь: «Я не совсем отсюда. У меня есть миссия — но я забыла, какая». Мы путешествуем в измерение твоей души и активируем дремлющие коды космической памяти.">For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory.</p>
+      <div class="section-service__footer">
+        <span class="section-service__price" data-en="From $500" data-ru="от 50 000 ₽">From $500</span>
+        <a href="awakening.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 10. SERVICE 3 — 2-Month Program (full-width, gold-lion.jpg bg) ========== -->
+  <section class="section-service">
+    <div class="section-service__bg" style="background-image: url('assets/gold-lion.jpg'); background-color: #000;"></div>
+    <div class="section-service__content fade-in">
+      <div class="section-service__number" data-en="03" data-ru="03">03</div>
+      <h2 class="section-service__title" data-en="2-Month Awakening Program" data-ru="Программа Пробуждение — 2 месяца">2-Month Awakening Program</h2>
+      <p class="section-service__subtitle" data-en="Full transformation. Daily support. No going back." data-ru="Полная трансформация. Ежедневная поддержка. Пути назад нет.">Full transformation. Daily support. No going back.</p>
+      <p class="section-service__desc" data-en="4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose." data-ru="4 глубинных сессии за 2 месяца, плюс 5 дней в неделю персональной поддержки. Это место, куда женщины приходят одним человеком, а уходят другим — с ясностью, силой и нерушимой связью с предназначением.">4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose.</p>
+      <div class="section-service__footer">
+        <span class="section-service__price" data-en="From $2,500" data-ru="от 250 000 ₽">From $2,500</span>
+        <a href="program.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 11. TESTIMONIALS — Cream bg, sticky heading left, cards right ========== -->
   <section class="section-testimonials">
     <div class="container">
       <div class="testimonials__grid">
@@ -326,9 +307,9 @@
     </div>
   </section>
 
-  <!-- ========== 11. CLUB ========== -->
+  <!-- ========== 12. CLUB — crystal-ethereal.jpg bg, 0.65 overlay ========== -->
   <section class="section-club">
-    <div class="section-club__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #1A1A2E;"></div>
+    <div class="section-club__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #000;"></div>
     <div class="container">
       <div class="section-club__content fade-in">
         <span class="eyebrow eyebrow--light" data-en="Ongoing Community" data-ru="Сообщество">Ongoing Community</span>
@@ -348,7 +329,7 @@
     </div>
   </section>
 
-  <!-- ========== 12. INSTAGRAM GRID ========== -->
+  <!-- ========== 13. INSTAGRAM — Warm bg, heading + handle + grid ========== -->
   <section class="section-instagram">
     <div class="container">
       <h3 class="fade-in" data-en="Follow the Journey" data-ru="Следи за путешествием">Follow the Journey</h3>
@@ -370,9 +351,9 @@
     </div>
   </section>
 
-  <!-- ========== 13. FINAL CTA ========== -->
+  <!-- ========== 14. FINAL CTA — venus-seashell.jpg bg, 0.65 overlay ========== -->
   <section class="section-final-cta">
-    <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #1A1A2E;"></div>
+    <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #000;"></div>
     <div class="section-final-cta__content fade-in">
       <h1 data-en="It's Time to Meet Who You Really Are" data-ru="Пора встретить ту, кто ты на самом деле">It's Time to Meet Who You Really Are</h1>
       <p class="section-final-cta__sub" data-en="One session can change what years of searching couldn't." data-ru="Одна сессия может изменить то, что не удавалось за годы поисков.">One session can change what years of searching couldn't.</p>
@@ -383,7 +364,7 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ========== 15. FOOTER — Cream ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
