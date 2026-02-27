@@ -68,6 +68,18 @@
       this.el = document.querySelector('.header');
       if (!this.el) return;
 
+      // Renew behavior: Squarespace injects padding-top on hero = header height
+      // (Source: HTML.md line 1611: style="padding-top: 53px")
+      const hero = document.querySelector('.hero--home');
+      if (hero) {
+        hero.style.paddingTop = this.el.offsetHeight + 'px';
+      }
+
+      window.addEventListener('resize', () => {
+        const h = document.querySelector('.hero--home');
+        if (h) h.style.paddingTop = this.el.offsetHeight + 'px';
+      });
+
       this.update();
       window.addEventListener('scroll', () => this.update(), { passive: true });
     },

@@ -323,10 +323,12 @@ em, .italic-accent {
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
-  border-radius: 12px;
-  box-shadow: var(--shadow-card);
-  padding: 12px 0;
-  min-width: 220px;
+  border-radius: 0;                              /* Renew: squared borders */
+  border: 1px solid rgba(45, 42, 62, 0.12);
+  box-shadow: none;
+  padding: 0;
+  min-width: unset;
+  width: calc(100% + 2px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
@@ -348,9 +350,13 @@ em, .italic-accent {
   transition: background 0.2s, color 0.2s;
 }
 
+.dropdown__item:not(:last-child) {
+  border-bottom: 1px solid rgba(45, 42, 62, 0.12);
+}
+
 .dropdown__item:hover {
-  background: var(--bg-warm);
-  color: var(--accent-sage);
+  background: var(--accent-gold);
+  color: #fff;
 }
 
 /* Header social icons */
@@ -732,19 +738,19 @@ em, .italic-accent {
 .hero__rect-wrap {
   position: relative;
   width: 100%;
-  padding: 0 3%;
+  padding: 0 4vw;             /* Renew: --sqs-site-gutter = 4vw */
 }
 
-/* The image/video container — dark bg, rounded corners, cinematic feel */
+/* The image/video container — Renew line 1655: true black bg */
 .hero__rect {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: var(--bg-dark);
+  background: #000;            /* Renew: true black */
   border-radius: 30px;
 }
 
-/* Video — visible with dark moody feel for white text readability */
+/* Video — Renew line 1655: filterStrength=40 → opacity(40%) */
 .hero__rect video,
 .hero__rect > img {
   position: absolute;
@@ -753,30 +759,40 @@ em, .italic-accent {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: opacity(75%);
+  filter: opacity(40%);        /* Renew exact: 40% on black */
 }
 
-/* Overlay — subtle darkening for text contrast */
+/* Overlay — Renew line 1546: imageOverlayOpacity=0.15 */
 .hero__rect::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(26, 26, 46, 0.3);
+  background: rgba(0, 0, 0, 0.15);  /* Renew exact: 0.15 on black */
   z-index: 1;
   pointer-events: none;
 }
 
-/* ---- CSS Grid: 22 rows × 26 cols (Renew fluid engine) ----
-   Renew row height: minmax(container * 0.0215, auto).
-   At 1440px viewport, container ≈ 1325px, so row ≈ 28.5px.
-   We use 2.15vw which gives ~31px at 1440px for similar proportions. */
+/* ---- CSS Grid: Renew exact fluid engine (HTML.md lines 1707-1726) ---- */
 .hero__grid {
+  /* === RENEW EXACT: Fluid Engine grid === */
+  --sqs-site-gutter: 4vw;
+  --sqs-site-max-width: 1500px;
+  --grid-gutter: calc(var(--sqs-site-gutter) - 11px);
+  --cell-max-width: calc((var(--sqs-site-max-width) - (11px * 23)) / 24);
+  --inset-padding: calc(var(--sqs-site-gutter) * 2);
+  --row-height-scaling-factor: 0.0215;
+  --container-width: min(var(--sqs-site-max-width), calc(100vw - var(--sqs-site-gutter) * 2 - var(--inset-padding)));
+
   display: grid;
   position: relative;
   z-index: 2;
-  grid-template-rows: repeat(22, minmax(max(24px, 2.15vw), auto));
-  grid-template-columns: repeat(26, 1fr);
-  gap: 11px;
+  grid-template-rows: repeat(22, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+  grid-template-columns:
+    minmax(var(--grid-gutter), 1fr)
+    repeat(24, minmax(0, var(--cell-max-width)))
+    minmax(var(--grid-gutter), 1fr);
+  row-gap: 11px;
+  column-gap: 11px;
 }
 
 /* Heading — rows 3-8, cols 8-20 — OVERLAPS portrait (z-index 5 = on top) */
@@ -2215,7 +2231,7 @@ h1, h2, h3 {
     display: none;
   }
 
-  /* Hero home mobile — Renew mobile grid: 10 cols × 22 rows */
+  /* Hero home mobile — Renew mobile grid (lines 1689-1705, 1729-1891) */
   .hero--home {
     padding: 0;
     gap: 0;
@@ -2227,9 +2243,16 @@ h1, h2, h3 {
   }
 
   .hero__grid {
-    grid-template-columns: repeat(10, 1fr);
+    --grid-gutter: calc(6vw - 11px);     /* Renew mobile: --sqs-mobile-site-gutter = 6vw */
+    --cell-max-width: calc((var(--sqs-site-max-width) - (11px * 7)) / 8);
+    grid-template-rows: repeat(22, minmax(24px, auto));
+    grid-template-columns:
+      minmax(var(--grid-gutter), 1fr)
+      repeat(8, minmax(0, var(--cell-max-width)))
+      minmax(var(--grid-gutter), 1fr);
   }
 
+  /* Renew mobile grid-area positions (lines 1729-1891) */
   .hero__grid-heading {
     grid-area: 3 / 2 / 6 / 10;
     z-index: 2;
