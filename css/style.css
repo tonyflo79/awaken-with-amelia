@@ -721,15 +721,19 @@ em, .italic-accent {
   padding: 0 3%;
 }
 
-/* The image/video container — black bg for Wash Out filter */
+/* The image/video container — light bg for "Wash Out" filter effect
+   Renew filter 6 "Wash Out" = video at reduced opacity on light background
+   creates a soft, faded, washed-out look (NOT dark). */
 .hero__rect {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #000;
+  background: var(--bg-cream);
 }
 
-/* Video — Renew filter 6 "Wash Out" at strength 40 = opacity(40%) */
+/* Video — "Wash Out" effect: semi-transparent video on light background.
+   Renew uses opacity(40%) but their source is a very bright lifestyle image.
+   Amelia's nature video is darker, so we use 55% for similar visual weight. */
 .hero__rect video,
 .hero__rect > img {
   position: absolute;
@@ -738,7 +742,7 @@ em, .italic-accent {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: opacity(40%);
+  filter: opacity(55%);
 }
 
 /* Overlay — Renew imageOverlayOpacity: 0.15 */
@@ -800,9 +804,9 @@ em, .italic-accent {
   justify-content: center;
 }
 
-/* Heading styles */
+/* Heading styles — dark text on washed-out light background (like Renew) */
 .hero--home h1 {
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0;
   font-size: clamp(3rem, 8vw, 7rem);
   text-transform: uppercase;
@@ -834,9 +838,9 @@ em, .italic-accent {
   object-fit: cover;
 }
 
-/* Label — monospace, uppercase */
+/* Label — monospace, uppercase, dark text */
 .hero--home .hero__pre {
-  color: rgba(255,255,255,0.85);
+  color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
@@ -844,9 +848,10 @@ em, .italic-accent {
   margin-bottom: 12px;
 }
 
-/* Body text */
+/* Body text — dark on washed-out background */
 .hero--home .hero__sub {
-  color: rgba(255,255,255,0.8);
+  color: var(--text-primary);
+  opacity: 0.85;
   max-width: 520px;
   font-size: 1rem;
   line-height: 1.8;
