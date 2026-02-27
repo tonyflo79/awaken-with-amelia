@@ -992,7 +992,7 @@ em, .italic-accent {
   opacity: 0.8;
   font-size: 1.05rem;
   max-width: 540px;
-  margin: 0 auto 32px;
+  margin: 0 auto 24px;
 }
 
 .section-value__cta {
