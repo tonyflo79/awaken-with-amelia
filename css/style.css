@@ -2116,8 +2116,7 @@ h1, h2, h3 {
   }
 
   .hero__brand {
-    font-size: clamp(0.85rem, 3.5vw, 1.2rem);
-    letter-spacing: 0.15em;
+    display: none;
   }
 
   /* Value section mobile */
