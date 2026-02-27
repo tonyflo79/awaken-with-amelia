@@ -723,17 +723,9 @@ em, .italic-accent {
 
 .hero--home .hero__bg { display: none; }
 
-/* Brand name on cream above image — top padding clears fixed nav */
+/* Brand name hidden — logo is now in header row 2 (Renew-style) */
 .hero__brand {
-  font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  text-align: center;
-  padding: 76px 24px 24px;
-  width: 100%;
+  display: none;
 }
 
 /* Inset wrapper — Renew "background-width--inset" */
