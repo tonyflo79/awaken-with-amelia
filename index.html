@@ -14,7 +14,7 @@
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="header header--transparent">
+  <header class="header header--transparent" data-theme="light">
     <div class="header__inner">
       <!-- Left nav -->
       <nav class="header__nav-left">
@@ -96,22 +96,26 @@
     <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary mobile-menu__cta" data-en="Book a Session" data-ru="Записаться">Book a Session</a>
   </div>
 
-  <!-- ========== 1. HERO — Full-viewport video background ========== -->
+  <!-- ========== 1. HERO — Rectangular video on light background (Renew-style) ========== -->
   <section class="hero hero--home">
-    <div class="hero__video-bg">
+    <!-- Brand name above rectangle -->
+    <div class="hero__brand" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</div>
+
+    <!-- Rectangular video with content overlaid -->
+    <div class="hero__rect">
       <video autoplay loop muted playsinline poster="assets/hero-cosmic.jpg">
         <source src="assets/nature-bg.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="hero__content">
-      <span class="hero__pre" data-en="Spiritual Guide &amp; Energy Healer" data-ru="Духовный проводник и энергопрактик">Spiritual Guide &amp; Energy Healer</span>
-      <div class="hero__oval">
-        <img src="assets/selfie-casual.jpg" alt="Amelia Lira">
-      </div>
-      <h1 data-en="You Already &lt;em&gt;Know&lt;/em&gt;" data-ru="Ты Уже &lt;em&gt;Знаешь&lt;/em&gt;">You Already <em>Know</em></h1>
-      <p class="hero__sub" data-en="Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world." data-ru="Что-то привело тебя сюда. То же самое, что шепчет в 3 часа ночи, что посылает мурашки по телу во время медитации, что заставляет чувствовать — ты не совсем&nbsp;отсюда.">Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world.</p>
-      <div class="hero__cta">
-        <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--outline-light" data-en="Begin Your Awakening" data-ru="Начни своё Пробуждение">Begin Your Awakening</a>
+      <div class="hero__content">
+        <span class="hero__pre" data-en="Spiritual Guide &amp; Energy Healer" data-ru="Духовный проводник и энергопрактик">Spiritual Guide &amp; Energy Healer</span>
+        <div class="hero__oval">
+          <img src="assets/selfie-casual.jpg" alt="Amelia Lira">
+        </div>
+        <h1 data-en="You Already &lt;em&gt;Know&lt;/em&gt;" data-ru="Ты Уже &lt;em&gt;Знаешь&lt;/em&gt;">You Already <em>Know</em></h1>
+        <p class="hero__sub" data-en="Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world." data-ru="Что-то привело тебя сюда. То же самое, что шепчет в 3 часа ночи, что посылает мурашки по телу во время медитации, что заставляет чувствовать — ты не совсем&nbsp;отсюда.">Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world.</p>
+        <div class="hero__cta">
+          <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--outline-light" data-en="Begin Your Awakening" data-ru="Начни своё Пробуждение">Begin Your Awakening</a>
+        </div>
       </div>
     </div>
   </section>
@@ -121,7 +125,7 @@
     <div class="container">
       <div class="intro__grid">
         <div class="intro__image fade-in-left">
-          <img src="assets/portrait-natural.jpg" alt="Amelia Lira" style="background-color: #F5F0E8;">
+          <img src="assets/portrait-natural.jpg" alt="Amelia Lira" style="background-color: #EDE8E0;">
         </div>
         <div class="intro__text fade-in-right">
           <span class="eyebrow" data-en="Nice to meet you" data-ru="Приятно познакомиться">Nice to meet you</span>
@@ -176,17 +180,22 @@
     </div>
   </section>
 
-  <!-- ========== 4. VALUE / POWER — Full-viewport video background ========== -->
+  <!-- ========== 4. VALUE / POWER — Rectangular image on light background (Renew-style) ========== -->
   <section class="section-value">
-    <div class="section-value__video-bg">
-      <video autoplay loop muted playsinline poster="assets/gold-lion.jpg">
-        <source src="assets/nature-bg.mp4" type="video/mp4">
-      </video>
+    <!-- Rectangular image with heading overlaid -->
+    <div class="section-value__rect">
+      <img src="assets/gold-lion.jpg" alt="Your Soul Already Knows">
+      <div class="section-value__rect-heading">
+        <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
+      </div>
     </div>
+    <!-- Text content below the rectangle -->
     <div class="section-value__content">
-      <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
       <div class="typewriter-text"></div>
       <p class="section-value__sub" data-en="This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget." data-ru="Это не терапия. Это не коучинг. Это вспоминание того, кем ты была до того, как мир заставил тебя&nbsp;забыть.">This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget.</p>
+      <div class="section-value__cta">
+        <a href="services.html" class="btn btn--outline" data-en="Explore Services" data-ru="Услуги">Explore Services</a>
+      </div>
     </div>
   </section>
 
@@ -222,7 +231,7 @@
 
   <!-- ========== 6. TRANSITION BANNER ========== -->
   <section class="section-banner">
-    <div class="section-banner__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #2C2C2A;"></div>
+    <div class="section-banner__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #1A1A2E;"></div>
     <div class="section-banner__content">
       <h2 data-en="It's time to meet who you really are" data-ru="Пора встретить ту, кто ты на самом деле">It's time to meet who you really are</h2>
     </div>
@@ -235,8 +244,8 @@
       <div class="services__grid stagger-children">
         <!-- Card 1: Healing -->
         <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #2C2C2A, #4C5337);">
-            <img src="assets/crystal-ethereal.jpg" alt="Multidimensional Healing" style="background-color: #4C5337;">
+          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
+            <img src="assets/crystal-ethereal.jpg" alt="Multidimensional Healing" style="background-color: #2D2A3E;">
             <span class="service-card__number">01</span>
           </div>
           <div class="service-card__body">
@@ -252,8 +261,8 @@
 
         <!-- Card 2: Awakening -->
         <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #2C2C2A, #4C5337);">
-            <img src="assets/hero-cosmic.jpg" alt="Awakening Session" style="background-color: #4C5337;">
+          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
+            <img src="assets/hero-cosmic.jpg" alt="Awakening Session" style="background-color: #2D2A3E;">
             <span class="service-card__number">02</span>
           </div>
           <div class="service-card__body">
@@ -269,8 +278,8 @@
 
         <!-- Card 3: Program -->
         <div class="service-card">
-          <div class="service-card__image" style="background: linear-gradient(135deg, #2C2C2A, #4C5337);">
-            <img src="assets/gold-lion.jpg" alt="2-Month Program" style="background-color: #4C5337;">
+          <div class="service-card__image" style="background: linear-gradient(135deg, #1A1A2E, #2D2A3E);">
+            <img src="assets/gold-lion.jpg" alt="2-Month Program" style="background-color: #2D2A3E;">
             <span class="service-card__number">03</span>
           </div>
           <div class="service-card__body">
@@ -318,7 +327,7 @@
 
   <!-- ========== 11. CLUB ========== -->
   <section class="section-club">
-    <div class="section-club__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #2C2C2A;"></div>
+    <div class="section-club__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #1A1A2E;"></div>
     <div class="container">
       <div class="section-club__content fade-in">
         <span class="eyebrow eyebrow--light" data-en="Ongoing Community" data-ru="Сообщество">Ongoing Community</span>
@@ -362,7 +371,7 @@
 
   <!-- ========== 13. FINAL CTA ========== -->
   <section class="section-final-cta">
-    <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #2C2C2A;"></div>
+    <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #1A1A2E;"></div>
     <div class="section-final-cta__content fade-in">
       <h1 data-en="It's Time to Meet Who You Really Are" data-ru="Пора встретить ту, кто ты на самом деле">It's Time to Meet Who You Really Are</h1>
       <p class="section-final-cta__sub" data-en="One session can change what years of searching couldn't." data-ru="Одна сессия может изменить то, что не удавалось за годы поисков.">One session can change what years of searching couldn't.</p>
