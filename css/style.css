@@ -668,11 +668,11 @@ em, .italic-accent {
   padding: 48px 24px 40px;
 }
 
-/* Rectangular portrait — centered on rectangle (Renew-style) */
+/* Oval portrait — centered on rectangle (Renew-style circular crop) */
 .hero__oval {
   width: clamp(160px, 18vw, 260px);
   aspect-ratio: 3/4;
-  border-radius: 0;
+  border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(201, 169, 110, 0.5);
   box-shadow: 0 12px 48px rgba(0,0,0,0.3);
@@ -763,7 +763,7 @@ em, .italic-accent {
   opacity: 0.85;
 }
 
-/* ---------- SECTION: PAIN POINTS ---------- */
+/* ---------- SECTION: PAIN POINTS (Renew-style layout) ---------- */
 .section-pain {
   padding: var(--section-pad) 0;
   background: var(--bg-cream);
@@ -772,11 +772,12 @@ em, .italic-accent {
   overflow: hidden;
 }
 
+/* Faded background text — behind cards at bottom */
 .pain__bg-text {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   font-family: var(--font-heading);
   font-size: clamp(8rem, 18vw, 16rem);
   font-weight: 600;
@@ -790,26 +791,58 @@ em, .italic-accent {
   z-index: 0;
 }
 
-.section-pain h2 {
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 64px;
+/* Header row: heading + text LEFT, CTA button RIGHT */
+.pain__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 48px;
   position: relative;
   z-index: 1;
 }
 
+.pain__header-text {
+  max-width: 600px;
+}
+
+.section-pain h2 {
+  color: var(--text-primary);
+  text-align: left;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.pain__header-text p {
+  color: var(--text-primary);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.pain__header-cta {
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.pain__header-cta .btn {
+  white-space: nowrap;
+}
+
+/* 4-column image card grid */
 .pain__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
 
-/* Pain cards — Tall rounded-corner image cards with text overlay (Renew-style) */
+/* Pain cards — Tall rounded-corner image cards with italic label overlaid (Renew-style) */
 .pain__card {
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 3/4.5;
   cursor: default;
@@ -820,59 +853,44 @@ em, .italic-accent {
   transform: translateY(-6px);
 }
 
-.pain__card-bg {
+/* Image/placeholder background */
+.pain__card-img {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-color: var(--accent-sage);
   transition: transform 0.6s var(--ease-smooth);
 }
 
-.pain__card:hover .pain__card-bg {
+.pain__card:hover .pain__card-img {
   transform: scale(1.05);
 }
 
-.pain__card-overlay {
+/* Subtle gradient at bottom for label visibility */
+.pain__card::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 32px 24px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
-  color: #fff;
-}
-
-.pain__card-overlay h4 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.pain__card-overlay p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.6;
-}
-
-.pain__cta {
-  text-align: center;
-  margin-top: 56px;
-  position: relative;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
-.pain__cta .btn {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-}
-
-.pain__cta .btn:hover {
-  background: var(--accent-gold);
+/* Italic label at bottom-left of card */
+.pain__card-label {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
   color: #fff;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* ---------- SECTION: VALUE / POWER — Rectangular image on light background (Renew-style) ---------- */
@@ -1894,6 +1912,11 @@ h1, h2, h3 {
 }
 
 @media (max-width: 1024px) {
+  .pain__header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .pain__grid {
     grid-template-columns: repeat(2, 1fr);
   }
