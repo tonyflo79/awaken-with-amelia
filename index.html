@@ -16,7 +16,7 @@
   <!-- ========== HEADER (Renew 2-row grid) ========== -->
   <header class="header header--transparent" data-theme="light">
     <div class="header__inner">
-      <!-- Left nav — Row 1, Col 1 -->
+      <!-- Left nav -- Row 1, Col 1 -->
       <nav class="header__nav-left">
         <a href="my-story.html" class="header__link" data-en="My Story" data-ru="Моя история">My Story</a>
         <div class="dropdown">
@@ -37,12 +37,12 @@
         </div>
       </nav>
 
-      <!-- Center logo — Row 2, spans both columns -->
+      <!-- Center logo -- Row 2, spans both columns -->
       <div class="header__logo">
         <a href="index.html" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</a>
       </div>
 
-      <!-- Right nav — Row 1, Col 2 -->
+      <!-- Right nav -- Row 1, Col 2 -->
       <nav class="header__nav-right">
         <div class="header__social-icons">
           <a href="https://instagram.com/bybonitesa" target="_blank" class="header__social-icon" aria-label="Instagram">
@@ -96,276 +96,349 @@
     <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary mobile-menu__cta" data-en="Book a Session" data-ru="Записаться">Book a Session</a>
   </div>
 
-  <!-- ========== 1. HERO — CSS Grid, video bg, inset, oval portrait ========== -->
-  <section class="hero hero--home">
-    <div class="hero__brand" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</div>
+  <main>
 
-    <div class="hero__rect-wrap">
-      <div class="hero__rect">
-        <video autoplay loop muted playsinline poster="assets/hero-cosmic.jpg">
-          <source src="assets/nature-bg.mp4" type="video/mp4">
-        </video>
-        <div class="hero__grid">
-          <div class="hero__grid-heading">
-            <h1 data-en="You Already &lt;em&gt;Know&lt;/em&gt;" data-ru="Ты Уже &lt;em&gt;Знаешь&lt;/em&gt;">You Already <em>Know</em></h1>
-          </div>
-          <div class="hero__grid-portrait">
-            <div class="hero__oval">
-              <img src="assets/selfie-casual.jpg" alt="Amelia Lira">
+    <!-- ========== S1. HERO — CSS Grid, video bg, inset, oval portrait ========== -->
+    <section class="hero hero--home" data-section-theme="black">
+      <div class="hero__brand" data-en="Awaken with Amelia" data-ru="Awaken with Amelia">Awaken with Amelia</div>
+
+      <div class="hero__rect-wrap">
+        <div class="hero__rect">
+          <video autoplay loop muted playsinline poster="assets/hero-cosmic.jpg">
+            <source src="assets/nature-bg.mp4" type="video/mp4">
+          </video>
+          <div class="hero__grid">
+            <div class="hero__grid-heading">
+              <h1 data-en="You Already &lt;em&gt;Know&lt;/em&gt;" data-ru="Ты Уже &lt;em&gt;Знаешь&lt;/em&gt;">You Already <em>Know</em></h1>
+            </div>
+            <div class="hero__grid-portrait">
+              <div class="hero__oval">
+                <img src="assets/selfie-casual.jpg" alt="Amelia Lira">
+              </div>
+            </div>
+            <div class="hero__grid-subtitle">
+              <span class="hero__pre" data-en="Spiritual Guide &amp; Energy Healer" data-ru="Духовный проводник и энергопрактик">Spiritual Guide &amp; Energy Healer</span>
+              <p class="hero__sub" data-en="Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world." data-ru="Что-то привело тебя сюда. То же самое, что шепчет в 3 часа ночи, что посылает мурашки по телу во время медитации, что заставляет чувствовать — ты не совсем&nbsp;отсюда.">Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world.</p>
+            </div>
+            <div class="hero__grid-cta">
+              <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary" data-en="Begin Your Awakening" data-ru="Начни своё Пробуждение">Begin Your Awakening <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg></a>
             </div>
           </div>
-          <div class="hero__grid-subtitle">
-            <span class="hero__pre" data-en="Spiritual Guide &amp; Energy Healer" data-ru="Духовный проводник и энергопрактик">Spiritual Guide &amp; Energy Healer</span>
-            <p class="hero__sub" data-en="Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world." data-ru="Что-то привело тебя сюда. То же самое, что шепчет в 3 часа ночи, что посылает мурашки по телу во время медитации, что заставляет чувствовать — ты не совсем&nbsp;отсюда.">Something brought you here. The same something that whispers at 3am, that sends chills through your body during meditation, that makes you feel like you don't quite belong in this&nbsp;world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== S2. INTRO — Cream bg, image left, text right, AWAKEN watermark ========== -->
+    <section class="section-intro" data-section-theme="white-bold">
+      <div class="container">
+        <div class="intro__grid">
+          <div class="intro__image fade-in-left">
+            <img src="assets/portrait-natural.jpg" alt="Amelia Lira">
           </div>
-          <div class="hero__grid-cta">
-            <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary" data-en="Begin Your Awakening" data-ru="Начни своё Пробуждение">Begin Your Awakening <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 2. INTRO — Cream bg, image left, text right ========== -->
-  <section class="section-intro">
-    <div class="intro__bg-text" data-en="AWAKEN" data-ru="ПРОБУЖДЕНИЕ">AWAKEN</div>
-    <div class="container">
-      <div class="intro__grid">
-        <div class="intro__image fade-in-left">
-          <img src="assets/portrait-natural.jpg" alt="Amelia Lira">
-        </div>
-        <div class="intro__text fade-in-right">
-          <span class="eyebrow" data-en="Nice to meet you" data-ru="Приятно познакомиться">Nice to meet you</span>
-          <h2 data-en="I'm Amelia" data-ru="Я — Амелия">I'm Amelia</h2>
-          <p data-en="I see what most people can't. And I help you see it too." data-ru="Я вижу то, что большинство не видит. И помогаю тебе увидеть тоже.">I see what most people can't. And I help you see it too.</p>
-          <p data-en="I'm a spiritual guide and energy healer who works across dimensions — past lives, parallel realities, ancestral lineage, and your soul's original blueprint." data-ru="Я духовный проводник и энергопрактик. Работаю через измерения — прошлые жизни, параллельные реальности, родовую систему и изначальный чертёж твоей души.">I'm a spiritual guide and energy healer who works across dimensions — past lives, parallel realities, ancestral lineage, and your soul's original blueprint.</p>
-          <p data-en="But here's what matters: I don't fix you. You were never broken.&lt;br&gt;&lt;br&gt;I help you remember who you actually are. And when you remember — everything changes." data-ru="Но вот что важно: я тебя не чиню. Ты никогда не была сломана.&lt;br&gt;&lt;br&gt;Я помогаю тебе вспомнить, кто ты на самом деле. А когда вспоминаешь — меняется всё.">But here's what matters: I don't fix you. You were never broken.<br><br>I help you remember who you actually are. And when you remember — everything changes.</p>
-          <a href="my-story.html" class="link-arrow" data-en="Read My Full Story" data-ru="Читать мою историю">Read My Full Story</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 3. PAIN — Warm bg, heading+CTA top, 4 tall image cards ========== -->
-  <section class="section-pain">
-    <div class="container">
-      <div class="pain__header">
-        <div class="pain__header-text fade-in">
-          <h2 data-en="Does This Sound Like &lt;em&gt;You&lt;/em&gt;?" data-ru="Узнаёшь &lt;em&gt;себя&lt;/em&gt;?">Does This Sound Like <em>You</em>?</h2>
-          <p data-en="You've tried everything — therapy, self-help, meditation apps — but nothing reaches the root. You still feel exhausted, disconnected, stuck in the same patterns. Your soul knows there's more, but you can't quite reach&nbsp;it." data-ru="Ты пробовала всё — терапию, саморазвитие, медитации — но ничего не достаёт до корня. Ты по-прежнему обессилена, отключена, застряла в тех же паттернах. Душа знает — есть что-то большее, но дотянуться не&nbsp;получается.">You've tried everything — therapy, self-help, meditation apps — but nothing reaches the root. You still feel exhausted, disconnected, stuck in the same patterns. Your soul knows there's more, but you can't quite reach&nbsp;it.</p>
-        </div>
-        <div class="pain__header-cta fade-in">
-          <a href="services.html" class="btn btn--outline pain__btn-arrow" data-en="View My Offerings" data-ru="Мои услуги">View My Offerings <span>+</span></a>
-        </div>
-      </div>
-      <div class="pain__grid stagger-children">
-        <div class="pain__card">
-          <div class="pain__card-img" style="background-color: #B8A9C9;"></div>
-          <span class="pain__card-label" data-en="&lt;em&gt;Exhausted?&lt;/em&gt;" data-ru="&lt;em&gt;Обессилена?&lt;/em&gt;"><em>Exhausted?</em></span>
-        </div>
-        <div class="pain__card">
-          <div class="pain__card-img" style="background-color: #8B7DB8;"></div>
-          <span class="pain__card-label" data-en="&lt;em&gt;Disconnected?&lt;/em&gt;" data-ru="&lt;em&gt;Отключена?&lt;/em&gt;"><em>Disconnected?</em></span>
-        </div>
-        <div class="pain__card">
-          <div class="pain__card-img" style="background-color: #C9A96E;"></div>
-          <span class="pain__card-label" data-en="&lt;em&gt;Stuck?&lt;/em&gt;" data-ru="&lt;em&gt;Застряла?&lt;/em&gt;"><em>Stuck?</em></span>
-        </div>
-        <div class="pain__card">
-          <div class="pain__card-img" style="background-color: #2D2A3E;"></div>
-          <span class="pain__card-label" data-en="&lt;em&gt;Searching?&lt;/em&gt;" data-ru="&lt;em&gt;В поиске?&lt;/em&gt;"><em>Searching?</em></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 4. VALUE — Full-bleed DARK, gold-lion.jpg bg, 0.15 overlay ========== -->
-  <section class="section-value">
-    <div class="section-value__bg-img" style="background-image: url('assets/gold-lion.jpg');"></div>
-    <div class="section-value__content fade-in">
-      <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
-      <p class="section-value__sub" data-en="This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget." data-ru="Это не терапия. Это не коучинг. Это вспоминание того, кем ты была до того, как мир заставил тебя&nbsp;забыть.">This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget.</p>
-      <div class="typewriter-text"></div>
-      <div class="section-value__cta">
-        <a href="services.html" class="btn btn--outline" data-en="Explore Services" data-ru="Услуги">Explore Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 5. DIVIDER — Dark strip ========== -->
-  <div class="section-divider"></div>
-
-  <!-- ========== 6. STORIES — Warm bg, carousel ========== -->
-  <section class="section-stories">
-    <div class="container">
-      <h2 class="fade-in" data-en="What Happens When You Remember" data-ru="Что происходит, когда ты вспоминаешь">What Happens When You Remember</h2>
-      <p class="stories__subtitle fade-in" data-en="Real transformations from real women" data-ru="Реальные трансформации реальных женщин">Real transformations from real women</p>
-      <div class="stories__carousel">
-        <div class="story-card">
-          <p class="story-card__quote" data-en="This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm. This program is unbelievable." data-ru="Так развернуть жизнь на 180 градусов за это короткое время не удается даже психологам на 5-10 лет терапии. Полный контроль над жизнью и спокойствие. Этот марафон просто пушка!">This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm. This program is unbelievable.</p>
-          <span class="story-card__name" data-en="Anna" data-ru="Анна">Anna</span>
-          <span class="story-card__headline" data-en="180 Degrees in Weeks" data-ru="180 градусов за недели">180 Degrees in Weeks</span>
-        </div>
-        <div class="story-card">
-          <p class="story-card__quote" data-en="I finally said what I wanted. My husband agreed to move to our own apartment after months of refusing. I stopped going against myself. This program exceeded all my expectations." data-ru="Я решилась наконец поговорить с мужем, и он согласился искать квартиру. Уже неделя как мы живем в отдельном жилье. Я перестала идти против себя. Этот марафон превзошел все мои ожидания.">I finally said what I wanted. My husband agreed to move to our own apartment after months of refusing. I stopped going against myself. This program exceeded all my expectations.</p>
-          <span class="story-card__name" data-en="Anastasia" data-ru="Анастасия">Anastasia</span>
-          <span class="story-card__headline" data-en="My First Step Into Myself" data-ru="Мой первый шаг к себе">My First Step Into Myself</span>
-        </div>
-        <div class="story-card">
-          <p class="story-card__quote" data-en="After the session, the internal fears that held me in shadow for so long just left. My inner strength awakened. Clients started flowing in — I hadn't even offered my services. Amelia put me on the path and gave me a different life." data-ru="После сессии ушли внутренние страхи, которые так долго держали меня в тени. Пробуждается моя внутренняя сила. Начали приходить клиенты — я стала уверенно проводить презентации. Амелия поставила меня на путь и дала мне другую жизнь.">After the session, the internal fears that held me in shadow for so long just left. My inner strength awakened. Clients started flowing in — I hadn't even offered my services. Amelia put me on the path and gave me a different life.</p>
-          <span class="story-card__name" data-en="Angelika" data-ru="Ангелика">Angelika</span>
-          <span class="story-card__headline" data-en="The Fears Just... Left" data-ru="Страхи просто... ушли">The Fears Just... Left</span>
-        </div>
-      </div>
-      <div class="stories__nav"></div>
-      <div class="stories__cta fade-in">
-        <a href="testimonials.html" class="link-arrow" data-en="Read More Transformations" data-ru="Больше историй">Read More Transformations</a>
-        <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary" data-en="Book Your Session" data-ru="Записаться на сессию">Book Your Session</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 7. BANNER — venus-seashell.jpg bg, 0.65 overlay, gold heading ========== -->
-  <section class="section-banner">
-    <div class="section-banner__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #000;"></div>
-    <div class="section-banner__content">
-      <h2 data-en="It's time to meet who you really are" data-ru="Пора встретить ту, кто ты на самом деле">It's time to meet who you really are</h2>
-    </div>
-  </section>
-
-  <!-- ========== 8. SERVICE 1 — Multidimensional Healing (full-width, crystal-ethereal.jpg bg) ========== -->
-  <section class="section-service">
-    <div class="section-service__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #000;"></div>
-    <div class="section-service__content fade-in">
-      <div class="section-service__number" data-en="01" data-ru="01">01</div>
-      <h2 class="section-service__title" data-en="Multidimensional Healing" data-ru="Многомерное Исцеление">Multidimensional Healing</h2>
-      <p class="section-service__subtitle" data-en="Find the root. Heal it at the source." data-ru="Найти корень. Исцелить у источника.">Find the root. Heal it at the source.</p>
-      <p class="section-service__desc" data-en="For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone." data-ru="Когда есть конкретная боль, паттерн или блок, который не сдвигается — что бы ты ни пробовала. Мы идём к точке начала и переписываем сценарий на уровне души. Одна сессия. Первопричина. Всё.">For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone.</p>
-      <div class="section-service__footer">
-        <span class="section-service__price" data-en="From $300" data-ru="от 30 000 ₽">From $300</span>
-        <a href="healing.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 9. SERVICE 2 — Awakening (full-width, hero-cosmic.jpg bg) ========== -->
-  <section class="section-service">
-    <div class="section-service__bg" style="background-image: url('assets/hero-cosmic.jpg'); background-color: #000;"></div>
-    <div class="section-service__content fade-in">
-      <div class="section-service__number" data-en="02" data-ru="02">02</div>
-      <h2 class="section-service__title" data-en="Awakening" data-ru="Пробуждение">Awakening</h2>
-      <p class="section-service__subtitle" data-en="Meet your true self. Remember your star home." data-ru="Встреча с истинным Собой. Вспоминание звёздного Дома.">Meet your true self. Remember your star home.</p>
-      <p class="section-service__desc" data-en="For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory." data-ru="Когда ты чувствуешь: «Я не совсем отсюда. У меня есть миссия — но я забыла, какая». Мы путешествуем в измерение твоей души и активируем дремлющие коды космической памяти.">For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory.</p>
-      <div class="section-service__footer">
-        <span class="section-service__price" data-en="From $500" data-ru="от 50 000 ₽">From $500</span>
-        <a href="awakening.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 10. SERVICE 3 — 2-Month Program (full-width, gold-lion.jpg bg) ========== -->
-  <section class="section-service">
-    <div class="section-service__bg" style="background-image: url('assets/gold-lion.jpg'); background-color: #000;"></div>
-    <div class="section-service__content fade-in">
-      <div class="section-service__number" data-en="03" data-ru="03">03</div>
-      <h2 class="section-service__title" data-en="2-Month Awakening Program" data-ru="Программа Пробуждение — 2 месяца">2-Month Awakening Program</h2>
-      <p class="section-service__subtitle" data-en="Full transformation. Daily support. No going back." data-ru="Полная трансформация. Ежедневная поддержка. Пути назад нет.">Full transformation. Daily support. No going back.</p>
-      <p class="section-service__desc" data-en="4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose." data-ru="4 глубинных сессии за 2 месяца, плюс 5 дней в неделю персональной поддержки. Это место, куда женщины приходят одним человеком, а уходят другим — с ясностью, силой и нерушимой связью с предназначением.">4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose.</p>
-      <div class="section-service__footer">
-        <span class="section-service__price" data-en="From $2,500" data-ru="от 250 000 ₽">From $2,500</span>
-        <a href="program.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 11. TESTIMONIALS — Cream bg, sticky heading left, cards right ========== -->
-  <section class="section-testimonials">
-    <div class="container">
-      <div class="testimonials__grid">
-        <div class="testimonials__heading fade-in">
-          <span class="testimonials__heading-label" data-en="Client Stories" data-ru="Истории клиентов">Client Stories</span>
-          <h2 data-en="Trans&shy;for&shy;ma&shy;tions" data-ru="Транс&shy;фор&shy;ма&shy;ции">Trans&shy;for&shy;ma&shy;tions</h2>
-        </div>
-        <div class="testimonials__cards">
-          <div class="testimonial-card fade-in">
-            <p class="testimonial-card__headline" data-en="&ldquo;180 Degrees in Weeks&rdquo;" data-ru="«180 градусов за недели»">&ldquo;180 Degrees in Weeks&rdquo;</p>
-            <p class="testimonial-card__text" data-en="This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm." data-ru="Так развернуть жизнь на 180 градусов за это короткое время не удается даже психологам на 5-10 лет терапии. Полный контроль над жизнью и спокойствие.">This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm.</p>
-            <span class="testimonial-card__name" data-en="— Anna" data-ru="— Анна">— Anna</span>
-          </div>
-          <div class="testimonial-card fade-in">
-            <p class="testimonial-card__headline" data-en="&ldquo;My Inner Strength Awakened&rdquo;" data-ru="«Пробудилась внутренняя сила»">&ldquo;My Inner Strength Awakened&rdquo;</p>
-            <p class="testimonial-card__text" data-en="After the session, the internal fears that held me in shadow for so long just left. Clients started flowing in — I hadn't even offered my services. My financial indicators grew. Amelia gave me a different life." data-ru="После сессии ушли внутренние страхи, которые так долго держали меня в тени. Начали приходить клиенты. Исчез страх говорить и заявлять о себе. Амелия поставила меня на путь и дала мне другую жизнь.">After the session, the internal fears that held me in shadow for so long just left. Clients started flowing in — I hadn't even offered my services. My financial indicators grew. Amelia gave me a different life.</p>
-            <span class="testimonial-card__name" data-en="— Angelika" data-ru="— Ангелика">— Angelika</span>
-          </div>
-          <div class="testimonial-card fade-in">
-            <p class="testimonial-card__headline" data-en="&ldquo;I Am the Creator&rdquo;" data-ru="«Я — Творец»">&ldquo;I Am the Creator&rdquo;</p>
-            <p class="testimonial-card__text" data-en="I finally felt myself as the Creator, where no creation can be stronger than me, no aspect of 'objective' reality is more powerful than me. All fears are illusion. I feel the power and I know what to do." data-ru="Я наконец-то ощутила себя Творцом, где ни одно творение не может быть сильнее меня, ни один аспект «объективной» реальности не властен надо мной. Все страхи — иллюзия. Я чувствую силу и знаю, что делать.">I finally felt myself as the Creator, where no creation can be stronger than me, no aspect of 'objective' reality is more powerful than me. All fears are illusion. I feel the power and I know what to do.</p>
-            <span class="testimonial-card__name" data-en="— Anna" data-ru="— Анна">— Anna</span>
+          <div class="intro__text fade-in-right">
+            <span class="eyebrow" data-en="Nice to meet you" data-ru="Приятно познакомиться">Nice to meet you</span>
+            <h2 data-en="I'm Amelia" data-ru="Я — Амелия">I'm Amelia</h2>
+            <p data-en="I see what most people can't. And I help you see it too." data-ru="Я вижу то, что большинство не видит. И помогаю тебе увидеть тоже.">I see what most people can't. And I help you see it too.</p>
+            <p data-en="I'm a spiritual guide and energy healer who works across dimensions — past lives, parallel realities, ancestral lineage, and your soul's original blueprint." data-ru="Я духовный проводник и энергопрактик. Работаю через измерения — прошлые жизни, параллельные реальности, родовую систему и изначальный чертёж твоей души.">I'm a spiritual guide and energy healer who works across dimensions — past lives, parallel realities, ancestral lineage, and your soul's original blueprint.</p>
+            <p data-en="But here's what matters: I don't fix you. You were never broken.&lt;br&gt;&lt;br&gt;I help you remember who you actually are. And when you remember — everything changes." data-ru="Но вот что важно: я тебя не чиню. Ты никогда не была сломана.&lt;br&gt;&lt;br&gt;Я помогаю тебе вспомнить, кто ты на самом деле. А когда вспоминаешь — меняется всё.">But here's what matters: I don't fix you. You were never broken.<br><br>I help you remember who you actually are. And when you remember — everything changes.</p>
+            <a href="my-story.html" class="link-arrow" data-en="Read My Full Story" data-ru="Читать мою историю">Read My Full Story</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== 12. CLUB — crystal-ethereal.jpg bg, 0.65 overlay ========== -->
-  <section class="section-club">
-    <div class="section-club__bg" style="background-image: url('assets/crystal-ethereal.jpg'); background-color: #000;"></div>
-    <div class="container">
-      <div class="section-club__content fade-in">
-        <span class="eyebrow eyebrow--light" data-en="Ongoing Community" data-ru="Сообщество">Ongoing Community</span>
-        <h2 data-en="People of the New Era" data-ru="Люди Нового Времени">People of the New Era</h2>
-        <p data-en="The session opens the door. The Club keeps it open." data-ru="Сессия открывает дверь. Клуб держит её открытой.">The session opens the door. The Club keeps it open.</p>
-        <p data-en="A living community of women who are done playing small. Inside you'll find:" data-ru="Живое сообщество женщин, которые закончили играть в маленькую. Внутри:">A living community of women who are done playing small. Inside you'll find:</p>
-        <div class="club__benefits">
-          <div class="club__benefit" data-en="&lt;strong&gt;Lectures&lt;/strong&gt; that rewire how you see reality (members say: &ldquo;my brain is literally restructuring&rdquo;)" data-ru="&lt;strong&gt;Лекции&lt;/strong&gt;, которые перестраивают восприятие реальности (участницы говорят: «мой мозг буквально переформатируется»)"><strong>Lectures</strong> that rewire how you see reality (members say: &ldquo;my brain is literally restructuring&rdquo;)</div>
-          <div class="club__benefit" data-en="&lt;strong&gt;Weekly practices&lt;/strong&gt; — cleansing, connection with Higher Self, ancestral healing, soul restoration" data-ru="&lt;strong&gt;Еженедельные практики&lt;/strong&gt; — очищение, соединение с Высшим Я, родовое исцеление, восстановление целостности души"><strong>Weekly practices</strong> — cleansing, connection with Higher Self, ancestral healing, soul restoration</div>
-          <div class="club__benefit" data-en="&lt;strong&gt;Direct access to Amelia&lt;/strong&gt; — questions answered, guidance given, energy held" data-ru="&lt;strong&gt;Прямой доступ к Амелии&lt;/strong&gt; — вопросы, направление, энергетическое сопровождение"><strong>Direct access to Amelia</strong> — questions answered, guidance given, energy held</div>
-          <div class="club__benefit" data-en="&lt;strong&gt;A field of women&lt;/strong&gt; who speak your language — the &lt;em&gt;real&lt;/em&gt; one" data-ru="&lt;strong&gt;Поле женщин&lt;/strong&gt;, которые говорят на твоём языке — &lt;em&gt;настоящем&lt;/em&gt;"><strong>A field of women</strong> who speak your language — the <em>real</em> one</div>
+    <!-- ========== S3. PAIN — Warm bg, heading+CTA top, 4 tall image cards ========== -->
+    <section class="section-pain" data-section-theme="light">
+      <div class="container">
+        <div class="pain__header">
+          <div class="pain__header-text fade-in">
+            <h2 data-en="Does This Sound Like &lt;em&gt;You&lt;/em&gt;?" data-ru="Узнаёшь &lt;em&gt;себя&lt;/em&gt;?">Does This Sound Like <em>You</em>?</h2>
+            <p data-en="You've tried everything — therapy, self-help, meditation apps — but nothing reaches the root. You still feel exhausted, disconnected, stuck in the same patterns. Your soul knows there's more, but you can't quite reach&nbsp;it." data-ru="Ты пробовала всё — терапию, саморазвитие, медитации — но ничего не достаёт до корня. Ты по-прежнему обессилена, отключена, застряла в тех же паттернах. Душа знает — есть что-то большее, но дотянуться не&nbsp;получается.">You've tried everything — therapy, self-help, meditation apps — but nothing reaches the root. You still feel exhausted, disconnected, stuck in the same patterns. Your soul knows there's more, but you can't quite reach&nbsp;it.</p>
+          </div>
+          <div class="pain__header-cta fade-in">
+            <a href="services.html" class="btn btn--outline pain__btn-arrow" data-en="View My Offerings" data-ru="Мои услуги">View My Offerings <span>+</span></a>
+          </div>
         </div>
-        <p data-en="This isn't a course. It's a container for your ongoing awakening." data-ru="Это не курс. Это пространство для твоего продолжающегося пробуждения.">This isn't a course. It's a container for your ongoing awakening.</p>
-        <br>
-        <a href="club.html" class="btn btn--primary" data-en="Join the Club" data-ru="Вступить в Клуб">Join the Club</a>
+        <div class="pain__grid stagger-children">
+          <div class="pain__card">
+            <div class="pain__card-img" style="background-color: #B8A9C9;"></div>
+            <span class="pain__card-label" data-en="&lt;em&gt;Exhausted?&lt;/em&gt;" data-ru="&lt;em&gt;Обессилена?&lt;/em&gt;"><em>Exhausted?</em></span>
+          </div>
+          <div class="pain__card">
+            <div class="pain__card-img" style="background-color: #8B7DB8;"></div>
+            <span class="pain__card-label" data-en="&lt;em&gt;Disconnected?&lt;/em&gt;" data-ru="&lt;em&gt;Отключена?&lt;/em&gt;"><em>Disconnected?</em></span>
+          </div>
+          <div class="pain__card">
+            <div class="pain__card-img" style="background-color: #C9A96E;"></div>
+            <span class="pain__card-label" data-en="&lt;em&gt;Stuck?&lt;/em&gt;" data-ru="&lt;em&gt;Застряла?&lt;/em&gt;"><em>Stuck?</em></span>
+          </div>
+          <div class="pain__card">
+            <div class="pain__card-img" style="background-color: #2D2A3E;"></div>
+            <span class="pain__card-label" data-en="&lt;em&gt;Searching?&lt;/em&gt;" data-ru="&lt;em&gt;В поиске?&lt;/em&gt;"><em>Searching?</em></span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== 13. INSTAGRAM — Warm bg, heading + handle + grid ========== -->
-  <section class="section-instagram">
-    <div class="container">
-      <h3 class="fade-in" data-en="Follow the Journey" data-ru="Следи за путешествием">Follow the Journey</h3>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram-handle">@bybonitesa</a>
-    </div>
-    <div class="instagram__grid">
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-      <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
-    </div>
-  </section>
-
-  <!-- ========== 14. FINAL CTA — venus-seashell.jpg bg, 0.65 overlay ========== -->
-  <section class="section-final-cta">
-    <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg'); background-color: #000;"></div>
-    <div class="section-final-cta__content fade-in">
-      <h1 data-en="It's Time to Meet Who You Really Are" data-ru="Пора встретить ту, кто ты на самом деле">It's Time to Meet Who You Really Are</h1>
-      <p class="section-final-cta__sub" data-en="One session can change what years of searching couldn't." data-ru="Одна сессия может изменить то, что не удавалось за годы поисков.">One session can change what years of searching couldn't.</p>
-      <div class="section-final-cta__buttons">
-        <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary" data-en="Book Your Session" data-ru="Записаться на сессию">Book Your Session</a>
-        <a href="https://t.me/ameliafromlyra" target="_blank" class="section-final-cta__secondary" data-en="Questions? Write to me on Telegram &rarr;" data-ru="Вопросы? Напиши мне в Telegram &rarr;">Questions? Write to me on Telegram &rarr;</a>
+    <!-- ========== S4. VALUE VIDEO — Full-bleed image bg + heading + rounded divider ========== -->
+    <section class="section-value-video has-section-divider" data-section-theme="black">
+      <div class="section-value-video__bg" style="background-image: url('assets/gold-lion.jpg');"></div>
+      <div class="section-value-video__overlay"></div>
+      <div class="section-value-video__content fade-in">
+        <h1 data-en="Your Soul Already Knows &lt;em&gt;the&nbsp;Way&lt;/em&gt;" data-ru="Твоя Душа Уже Знает &lt;em&gt;Путь&lt;/em&gt;">Your Soul Already Knows <em>the&nbsp;Way</em></h1>
       </div>
-    </div>
-  </section>
+      <div class="section-divider-curve">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,0 L0,80 Q720,160 1440,80 L1440,0 Z" fill="var(--color-dark, #1a1a2e)"/>
+        </svg>
+      </div>
+    </section>
 
-  <!-- ========== 15. FOOTER — Cream ========== -->
-  <footer class="footer">
+    <!-- ========== S5. VALUE TEXT — Dark bg, subtext, typewriter, CTA ========== -->
+    <section class="section-value-text" data-section-theme="dark">
+      <div class="section-value-text__content fade-in">
+        <p class="section-value-text__sub" data-en="This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget." data-ru="Это не терапия. Это не коучинг. Это вспоминание того, кем ты была до того, как мир заставил тебя&nbsp;забыть.">This isn't therapy. This isn't coaching. This is remembering who you were before the world told you to&nbsp;forget.</p>
+        <div class="typewriter-text"></div>
+        <div class="section-value-text__cta">
+          <a href="services.html" class="btn btn--outline-light" data-en="Explore Services" data-ru="Услуги">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== S6. STORIES HEADER — Light-bold, section heading ========== -->
+    <section class="section-stories-header" data-section-theme="light-bold">
+      <div class="container">
+        <h2 class="fade-in" data-en="What Happens When You Remember" data-ru="Что происходит, когда ты вспоминаешь">What Happens When You Remember</h2>
+        <p class="section-stories-header__subtitle fade-in" data-en="Real transformations from real women" data-ru="Реальные трансформации реальных женщин">Real transformations from real women</p>
+      </div>
+    </section>
+
+    <!-- ========== S7. STORIES CAROUSEL — Image left, card right, arrows ========== -->
+    <section class="section-stories-carousel" data-section-theme="light-bold">
+      <div class="container">
+        <div class="stories-slider">
+          <!-- Slide 1 -->
+          <div class="stories-slider__slide stories-slider__slide--active" data-index="0">
+            <div class="stories-slider__image">
+              <img src="assets/portrait-natural.jpg" alt="Client testimonial">
+            </div>
+            <div class="stories-slider__card">
+              <h3 class="stories-slider__headline" data-en="180 Degrees in Weeks" data-ru="180 градусов за недели">180 Degrees in Weeks</h3>
+              <p class="stories-slider__quote" data-en="This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm. This program is unbelievable." data-ru="Так развернуть жизнь на 180 градусов за это короткое время не удается даже психологам на 5-10 лет терапии. Полный контроль над жизнью и спокойствие. Этот марафон просто пушка!">This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm. This program is unbelievable.</p>
+              <span class="stories-slider__name" data-en="— Anna" data-ru="— Анна">— Anna</span>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="stories-slider__slide" data-index="1">
+            <div class="stories-slider__image">
+              <img src="assets/portrait-natural.jpg" alt="Client testimonial">
+            </div>
+            <div class="stories-slider__card">
+              <h3 class="stories-slider__headline" data-en="My First Step Into Myself" data-ru="Мой первый шаг к себе">My First Step Into Myself</h3>
+              <p class="stories-slider__quote" data-en="I finally said what I wanted. My husband agreed to move to our own apartment after months of refusing. I stopped going against myself. This program exceeded all my expectations." data-ru="Я решилась наконец поговорить с мужем, и он согласился искать квартиру. Уже неделя как мы живем в отдельном жилье. Я перестала идти против себя. Этот марафон превзошел все мои ожидания.">I finally said what I wanted. My husband agreed to move to our own apartment after months of refusing. I stopped going against myself. This program exceeded all my expectations.</p>
+              <span class="stories-slider__name" data-en="— Anastasia" data-ru="— Анастасия">— Anastasia</span>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="stories-slider__slide" data-index="2">
+            <div class="stories-slider__image">
+              <img src="assets/portrait-natural.jpg" alt="Client testimonial">
+            </div>
+            <div class="stories-slider__card">
+              <h3 class="stories-slider__headline" data-en="The Fears Just... Left" data-ru="Страхи просто... ушли">The Fears Just... Left</h3>
+              <p class="stories-slider__quote" data-en="After the session, the internal fears that held me in shadow for so long just left. My inner strength awakened. Clients started flowing in — I hadn't even offered my services. Amelia put me on the path and gave me a different life." data-ru="После сессии ушли внутренние страхи, которые так долго держали меня в тени. Пробуждается моя внутренняя сила. Начали приходить клиенты — я стала уверенно проводить презентации. Амелия поставила меня на путь и дала мне другую жизнь.">After the session, the internal fears that held me in shadow for so long just left. My inner strength awakened. Clients started flowing in — I hadn't even offered my services. Amelia put me on the path and gave me a different life.</p>
+              <span class="stories-slider__name" data-en="— Angelika" data-ru="— Ангелика">— Angelika</span>
+            </div>
+          </div>
+        </div>
+        <div class="stories-slider__nav">
+          <button class="stories-slider__arrow stories-slider__arrow--prev" aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/></svg>
+          </button>
+          <div class="stories-slider__dots">
+            <button class="stories-slider__dot stories-slider__dot--active" data-index="0" aria-label="Slide 1"></button>
+            <button class="stories-slider__dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="stories-slider__dot" data-index="2" aria-label="Slide 3"></button>
+          </div>
+          <button class="stories-slider__arrow stories-slider__arrow--next" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="m304-82-56-57 343-343-343-343 56-57 400 400L304-82Z"/></svg>
+          </button>
+        </div>
+        <div class="stories-slider__cta fade-in">
+          <a href="testimonials.html" class="link-arrow" data-en="Read More Transformations" data-ru="Больше историй">Read More Transformations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== S8-S11. STACKING SERVICES — Sticky heading + 3 cards ========== -->
+    <div class="stacking-wrapper">
+
+      <!-- S8. Base: Sticky heading with bg image -->
+      <section class="section-stack section-stack--base" data-section-theme="black-bold">
+        <div class="section-stack__bg" style="background-image: url('assets/venus-seashell.jpg');"></div>
+        <div class="section-stack__overlay"></div>
+        <div class="section-stack__content section-stack__content--sticky">
+          <h2 data-en="It's time to meet who you really are" data-ru="Пора встретить ту, кто ты на самом деле">It's time to meet who you really are</h2>
+        </div>
+      </section>
+
+      <!-- S9. Card 1: Multidimensional Healing -->
+      <section class="section-stack section-stack--card" data-section-theme="black-bold" data-card-index="1">
+        <div class="section-stack__bg" style="background-image: url('assets/crystal-ethereal.jpg');"></div>
+        <div class="section-stack__overlay"></div>
+        <div class="section-stack__content fade-in">
+          <span class="section-stack__number" data-en="01" data-ru="01">01</span>
+          <h3 data-en="Multidimensional Healing" data-ru="Многомерное Исцеление">Multidimensional Healing</h3>
+          <p class="section-stack__subtitle" data-en="Find the root. Heal it at the source." data-ru="Найти корень. Исцелить у источника.">Find the root. Heal it at the source.</p>
+          <p class="section-stack__desc" data-en="For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone." data-ru="Когда есть конкретная боль, паттерн или блок, который не сдвигается — что бы ты ни пробовала. Мы идём к точке начала и переписываем сценарий на уровне души. Одна сессия. Первопричина. Всё.">For when you have a specific pain, pattern, or block that won't shift — no matter what you've tried. We go to the origin point and rewrite the script at the soul level. One session. The root cause. Gone.</p>
+          <div class="section-stack__footer">
+            <span class="section-stack__price" data-en="From $300" data-ru="от 30 000 ₽">From $300</span>
+            <a href="healing.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- S10. Card 2: Awakening -->
+      <section class="section-stack section-stack--card" data-section-theme="black-bold" data-card-index="2">
+        <div class="section-stack__bg" style="background-image: url('assets/hero-cosmic.jpg');"></div>
+        <div class="section-stack__overlay"></div>
+        <div class="section-stack__content fade-in">
+          <span class="section-stack__number" data-en="02" data-ru="02">02</span>
+          <h3 data-en="Awakening" data-ru="Пробуждение">Awakening</h3>
+          <p class="section-stack__subtitle" data-en="Meet your true self. Remember your star home." data-ru="Встреча с истинным Собой. Вспоминание звёздного Дома.">Meet your true self. Remember your star home.</p>
+          <p class="section-stack__desc" data-en="For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory." data-ru="Когда ты чувствуешь: «Я не совсем отсюда. У меня есть миссия — но я забыла, какая». Мы путешествуем в измерение твоей души и активируем дремлющие коды космической памяти.">For when you feel: &ldquo;I'm not entirely from here. I have a mission — but I've forgotten what it is.&rdquo; We travel to the dimension of your soul and activate the dormant codes of your cosmic memory.</p>
+          <div class="section-stack__footer">
+            <span class="section-stack__price" data-en="From $500" data-ru="от 50 000 ₽">From $500</span>
+            <a href="awakening.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- S11. Card 3: 2-Month Program -->
+      <section class="section-stack section-stack--card" data-section-theme="black-bold" data-card-index="3">
+        <div class="section-stack__bg" style="background-image: url('assets/gold-lion.jpg');"></div>
+        <div class="section-stack__overlay"></div>
+        <div class="section-stack__content fade-in">
+          <span class="section-stack__number" data-en="03" data-ru="03">03</span>
+          <h3 data-en="2-Month Awakening Program" data-ru="Программа Пробуждение — 2 месяца">2-Month Awakening Program</h3>
+          <p class="section-stack__subtitle" data-en="Full transformation. Daily support. No going back." data-ru="Полная трансформация. Ежедневная поддержка. Пути назад нет.">Full transformation. Daily support. No going back.</p>
+          <p class="section-stack__desc" data-en="4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose." data-ru="4 глубинных сессии за 2 месяца, плюс 5 дней в неделю персональной поддержки. Это место, куда женщины приходят одним человеком, а уходят другим — с ясностью, силой и нерушимой связью с предназначением.">4 deep sessions over 2 months, plus 5 days a week of personal support. This is where women arrive as one person and leave as another — with clarity, power, and unshakeable connection to their soul's purpose.</p>
+          <div class="section-stack__footer">
+            <span class="section-stack__price" data-en="From $2,500" data-ru="от 250 000 ₽">From $2,500</span>
+            <a href="program.html" class="link-arrow" data-en="Learn More" data-ru="Подробнее">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.stacking-wrapper -->
+
+    <!-- ========== S12. SPACER ========== -->
+    <div class="section-spacer section-spacer--dark"></div>
+
+    <!-- ========== S13. TESTIMONIALS — Vertical scrolling cards ========== -->
+    <section class="section-testimonials-scroll" data-section-theme="white">
+      <div class="container">
+        <h2 class="testimonials-scroll__heading fade-in" data-en="Trans&shy;for&shy;ma&shy;tions" data-ru="Транс&shy;фор&shy;ма&shy;ции">Trans&shy;for&shy;ma&shy;tions</h2>
+        <div class="testimonials-scroll__list">
+          <div class="testimonials-scroll__card fade-in">
+            <p class="testimonials-scroll__headline" data-en="&ldquo;180 Degrees in Weeks&rdquo;" data-ru="&laquo;180 градусов за недели&raquo;">&ldquo;180 Degrees in Weeks&rdquo;</p>
+            <p class="testimonials-scroll__quote" data-en="This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm." data-ru="Так развернуть жизнь на 180 градусов за это короткое время не удается даже психологам на 5-10 лет терапии. Полный контроль над жизнью и спокойствие.">This turned my life 180 degrees in such a short time — even psychologists can't do this in 5-10 years of therapy. Complete control over my life and total calm.</p>
+            <span class="testimonials-scroll__name" data-en="— Anna" data-ru="— Анна">— Anna</span>
+          </div>
+          <div class="testimonials-scroll__card fade-in">
+            <p class="testimonials-scroll__headline" data-en="&ldquo;My Inner Strength Awakened&rdquo;" data-ru="&laquo;Пробудилась внутренняя сила&raquo;">&ldquo;My Inner Strength Awakened&rdquo;</p>
+            <p class="testimonials-scroll__quote" data-en="After the session, the internal fears that held me in shadow for so long just left. Clients started flowing in — I hadn't even offered my services. My financial indicators grew. Amelia gave me a different life." data-ru="После сессии ушли внутренние страхи, которые так долго держали меня в тени. Начали приходить клиенты. Исчез страх говорить и заявлять о себе. Амелия поставила меня на путь и дала мне другую жизнь.">After the session, the internal fears that held me in shadow for so long just left. Clients started flowing in — I hadn't even offered my services. My financial indicators grew. Amelia gave me a different life.</p>
+            <span class="testimonials-scroll__name" data-en="— Angelika" data-ru="— Ангелика">— Angelika</span>
+          </div>
+          <div class="testimonials-scroll__card fade-in">
+            <p class="testimonials-scroll__headline" data-en="&ldquo;I Am the Creator&rdquo;" data-ru="&laquo;Я — Творец&raquo;">&ldquo;I Am the Creator&rdquo;</p>
+            <p class="testimonials-scroll__quote" data-en="I finally felt myself as the Creator, where no creation can be stronger than me, no aspect of 'objective' reality is more powerful than me. All fears are illusion. I feel the power and I know what to do." data-ru="Я наконец-то ощутила себя Творцом, где ни одно творение не может быть сильнее меня, ни один аспект «объективной» реальности не властен надо мной. Все страхи — иллюзия. Я чувствую силу и знаю, что делать.">I finally felt myself as the Creator, where no creation can be stronger than me, no aspect of 'objective' reality is more powerful than me. All fears are illusion. I feel the power and I know what to do.</p>
+            <span class="testimonials-scroll__name" data-en="— Anna" data-ru="— Анна">— Anna</span>
+          </div>
+        </div>
+        <div class="testimonials-scroll__cta fade-in">
+          <a href="testimonials.html" class="link-arrow" data-en="Read More Transformations" data-ru="Больше историй">Read More Transformations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== S14. SPACER ========== -->
+    <div class="section-spacer section-spacer--light"></div>
+
+    <!-- ========== S15. CLUB — Image left, text+links right (Renew "Free Resources" pattern) ========== -->
+    <section class="section-club" data-section-theme="light-bold">
+      <div class="container">
+        <div class="club__grid">
+          <div class="club__image fade-in-left">
+            <img src="assets/crystal-ethereal.jpg" alt="People of the New Era Club">
+          </div>
+          <div class="club__content fade-in-right">
+            <span class="eyebrow" data-en="Ongoing Community" data-ru="Сообщество">Ongoing Community</span>
+            <h2 data-en="People of the New Era" data-ru="Люди Нового Времени">People of the New Era</h2>
+            <p data-en="The session opens the door. The Club keeps it open." data-ru="Сессия открывает дверь. Клуб держит её открытой.">The session opens the door. The Club keeps it open.</p>
+            <div class="club__links">
+              <a href="club.html" class="club__link-item">
+                <span data-en="Lectures that rewire how you see reality" data-ru="Лекции, перестраивающие восприятие реальности">Lectures that rewire how you see reality</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg>
+              </a>
+              <a href="club.html" class="club__link-item">
+                <span data-en="Weekly practices &mdash; cleansing, Higher Self, ancestral healing" data-ru="Еженедельные практики &mdash; очищение, Высшее Я, родовое исцеление">Weekly practices &mdash; cleansing, Higher Self, ancestral healing</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg>
+              </a>
+              <a href="club.html" class="club__link-item">
+                <span data-en="Direct access to Amelia" data-ru="Прямой доступ к Амелии">Direct access to Amelia</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg>
+              </a>
+              <a href="club.html" class="club__link-item">
+                <span data-en="A field of women who speak your real language" data-ru="Поле женщин, говорящих на твоём настоящем языке">A field of women who speak your real language</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="currentColor"><path d="M683.15-460H200v-40h483.15L451.46-731.69 480-760l280 280-280 280-28.54-28.31L683.15-460Z"/></svg>
+              </a>
+            </div>
+            <a href="club.html" class="btn btn--primary" data-en="Join the Club" data-ru="Вступить в Клуб">Join the Club</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== S16. INSTAGRAM — Edge-to-edge grid, no gaps ========== -->
+    <section class="section-instagram" data-section-theme="none">
+      <div class="instagram__grid instagram__grid--edge-to-edge">
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+        <a href="https://instagram.com/bybonitesa" target="_blank" class="instagram__item"><div class="instagram__placeholder">&#10022;</div></a>
+      </div>
+      <div class="instagram__handle">
+        <a href="https://instagram.com/bybonitesa" target="_blank">@bybonitesa</a>
+      </div>
+    </section>
+
+    <!-- ========== S17. FINAL CTA — Full-bleed bg + overlay + heading + buttons ========== -->
+    <section class="section-final-cta" data-section-theme="black">
+      <div class="section-final-cta__bg" style="background-image: url('assets/venus-seashell.jpg');"></div>
+      <div class="section-final-cta__overlay"></div>
+      <div class="section-final-cta__content fade-in">
+        <h1 data-en="It's Time to Meet Who You Really Are" data-ru="Пора встретить ту, кто ты на самом деле">It's Time to Meet Who You Really Are</h1>
+        <p class="section-final-cta__sub" data-en="One session can change what years of searching couldn't." data-ru="Одна сессия может изменить то, что не удавалось за годы поисков.">One session can change what years of searching couldn't.</p>
+        <div class="section-final-cta__buttons">
+          <a href="https://t.me/ameliafromlyra" target="_blank" class="btn btn--primary" data-en="Book Your Session" data-ru="Записаться на сессию">Book Your Session</a>
+          <a href="https://t.me/ameliafromlyra" target="_blank" class="section-final-cta__secondary" data-en="Questions? Write to me on Telegram &rarr;" data-ru="Вопросы? Напиши мне в Telegram &rarr;">Questions? Write to me on Telegram &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== S18. FOOTER ========== -->
+  <footer class="footer" data-section-theme="white">
     <div class="container">
       <div class="footer__inner">
         <span class="footer__logo">Awaken with Amelia</span>
@@ -388,5 +461,106 @@
   <!-- TypeIt.js CDN -->
   <script src="https://unpkg.com/typeit@8.8.5/dist/index.umd.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Stacking cards + Stories slider initialization -->
+  <script>
+  (function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ---- STACKING CARDS ----
+      var wrapper = document.querySelector('.stacking-wrapper');
+      if (wrapper) {
+        var base = wrapper.querySelector('.section-stack--base');
+        var cards = wrapper.querySelectorAll('.section-stack--card');
+
+        if (base && cards.length > 0) {
+          // Set sticky positioning on base content
+          var baseContent = base.querySelector('.section-stack__content--sticky');
+          if (baseContent) {
+            baseContent.style.position = 'sticky';
+            baseContent.style.top = '0';
+          }
+
+          // Apply sticky + z-index to cards
+          cards.forEach(function(card, index) {
+            card.style.position = 'sticky';
+            card.style.top = '0';
+            card.style.zIndex = index + 2;
+          });
+
+          // Base gets z-index 1
+          base.style.position = 'sticky';
+          base.style.top = '0';
+          base.style.zIndex = 1;
+
+          // Optional: subtle scale-down on scroll for buried cards
+          var handleScroll = function() {
+            var wrapperRect = wrapper.getBoundingClientRect();
+            cards.forEach(function(card, index) {
+              var rect = card.getBoundingClientRect();
+              var nextCard = cards[index + 1];
+              if (nextCard) {
+                var nextRect = nextCard.getBoundingClientRect();
+                var overlap = Math.max(0, Math.min(1, 1 - (nextRect.top / window.innerHeight)));
+                card.style.transform = 'scale(' + (1 - overlap * 0.03) + ')';
+                card.style.filter = 'brightness(' + (1 - overlap * 0.08) + ')';
+              }
+            });
+          };
+
+          window.addEventListener('scroll', handleScroll, { passive: true });
+        }
+      }
+
+      // ---- STORIES SLIDER ----
+      var slider = document.querySelector('.stories-slider');
+      if (slider) {
+        var slides = slider.querySelectorAll('.stories-slider__slide');
+        var dots = document.querySelectorAll('.stories-slider__dot');
+        var prevBtn = document.querySelector('.stories-slider__arrow--prev');
+        var nextBtn = document.querySelector('.stories-slider__arrow--next');
+        var currentIndex = 0;
+
+        function showSlide(index) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          currentIndex = index;
+
+          slides.forEach(function(slide) {
+            slide.classList.remove('stories-slider__slide--active');
+          });
+          slides[currentIndex].classList.add('stories-slider__slide--active');
+
+          dots.forEach(function(dot) {
+            dot.classList.remove('stories-slider__dot--active');
+          });
+          if (dots[currentIndex]) {
+            dots[currentIndex].classList.add('stories-slider__dot--active');
+          }
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function() {
+            showSlide(currentIndex - 1);
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function() {
+            showSlide(currentIndex + 1);
+          });
+        }
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            showSlide(parseInt(dot.dataset.index, 10));
+          });
+        });
+      }
+
+    });
+  })();
+  </script>
+
 </body>
 </html>
