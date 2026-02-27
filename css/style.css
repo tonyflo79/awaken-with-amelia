@@ -25,10 +25,10 @@
   --shadow-card: 0 8px 32px rgba(45, 42, 62, 0.10);
 
   /* Typography */
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
-  --font-accent: 'Cormorant Garamond', Georgia, serif;
+  --font-accent: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
 
   /* Spacing */
   --section-pad: 120px;
