@@ -686,7 +686,9 @@ em, .italic-accent {
   justify-content: center;
 }
 
-/* Hero: Homepage — Full-width image, overlaid heading, overlapping portrait circle (Renew-style) */
+/* Hero: Homepage — ALL content on image background (Renew-style)
+   Renew structure: brand on cream, then ONE image section containing
+   heading + portrait + label + text + CTA all layered on the background */
 .hero--home {
   min-height: auto;
   background: var(--bg-cream);
@@ -714,23 +716,18 @@ em, .italic-accent {
   width: 100%;
 }
 
-/* Image wrapper — inset (not full-bleed) to match Renew template */
+/* Image wrapper — inset margins like Renew */
 .hero__rect-wrap {
   position: relative;
   width: 100%;
-  margin-bottom: 0;
   padding: 0 3%;
 }
 
-/* The full-width rectangular image/video */
+/* The image/video container — everything lives inside this */
 .hero__rect {
   position: relative;
   width: 100%;
-  min-height: 62vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero__rect video,
@@ -743,30 +740,36 @@ em, .italic-accent {
   z-index: 0;
 }
 
-/* Subtle overlay on image for text readability — matches Renew (0.15 opacity) */
+/* Overlay for text readability */
 .hero__rect::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(26, 26, 46, 0.15);
+  background: rgba(26, 26, 46, 0.2);
   z-index: 1;
   pointer-events: none;
 }
 
-/* Heading overlaid on the image — positioned in upper third like Renew */
-.hero--home h1 {
+/* Content stack — sits on top of image, flex column centered */
+.hero__content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 24px 56px;
+}
+
+/* Heading — upper portion of the image */
+.hero--home h1 {
   color: #fff;
   margin-bottom: 0;
   font-size: clamp(3rem, 8vw, 7rem);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1;
-  text-align: center;
   font-weight: 300;
-  padding: 0 24px;
-  margin-top: -15vh;
 }
 
 .hero--home h1 em {
@@ -776,19 +779,16 @@ em, .italic-accent {
   letter-spacing: normal;
 }
 
-/* Circle portrait — overlapping bottom edge of rect into cream below */
+/* Circle portrait — centered within the image, below heading */
 .hero__oval {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
   width: clamp(160px, 20vw, 260px);
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   overflow: hidden;
-  z-index: 3;
-  border: 6px solid var(--bg-cream);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  border: 6px solid rgba(248, 245, 240, 0.8);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  margin: 32px 0 28px;
+  flex-shrink: 0;
 }
 
 .hero__oval img {
@@ -797,26 +797,29 @@ em, .italic-accent {
   object-fit: cover;
 }
 
-/* Content below the image — top margin clears the overlapping portrait */
+/* Label below portrait — on the image */
 .hero--home .hero__pre {
-  color: var(--accent-sage);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   margin-bottom: 12px;
-  margin-top: calc(clamp(80px, 10vw, 130px) + 20px);
+  margin-top: 0;
 }
 
+/* Body text — on the image */
 .hero--home .hero__sub {
-  color: var(--text-primary);
-  opacity: 0.7;
-  margin-bottom: 8px;
+  color: rgba(255,255,255,0.8);
   max-width: 520px;
   font-size: 1rem;
   line-height: 1.8;
-  text-align: center;
-  padding: 0 24px;
+  margin-bottom: 8px;
 }
 
+/* CTA button — on the image */
 .hero--home .hero__cta {
-  padding: 0 24px 64px;
+  padding: 8px 0 0;
 }
 
 .hero--home .hero__cta .btn {
@@ -2158,29 +2161,21 @@ h1, h2, h3 {
     font-size: 0.9rem;
   }
 
-  .hero__rect {
-    min-height: 45vh;
+  .hero__content {
+    padding: 40px 16px 40px;
   }
 
   .hero--home h1 {
     font-size: clamp(2.2rem, 9vw, 3.5rem);
-    margin-top: 0;
   }
 
   .hero__oval {
     width: 140px;
-  }
-
-  .hero--home .hero__pre {
-    margin-top: calc(70px + 16px);
+    margin: 24px 0 20px;
   }
 
   .hero--home .hero__sub {
-    padding: 0 16px;
-  }
-
-  .hero--home .hero__cta {
-    padding: 0 16px 48px;
+    padding: 0;
   }
 
   /* Value section mobile */
