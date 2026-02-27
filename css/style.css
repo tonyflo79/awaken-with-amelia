@@ -755,12 +755,15 @@ em, .italic-accent {
   pointer-events: none;
 }
 
-/* ---- CSS Grid: 22 rows × 26 cols (Renew fluid engine) ---- */
+/* ---- CSS Grid: 22 rows × 26 cols (Renew fluid engine) ----
+   Renew row height: minmax(container * 0.0215, auto).
+   At 1440px viewport, container ≈ 1325px, so row ≈ 28.5px.
+   We use 2.15vw which gives ~31px at 1440px for similar proportions. */
 .hero__grid {
   display: grid;
   position: relative;
   z-index: 2;
-  grid-template-rows: repeat(22, minmax(24px, auto));
+  grid-template-rows: repeat(22, minmax(max(24px, 2.15vw), auto));
   grid-template-columns: repeat(26, 1fr);
   gap: 11px;
 }
