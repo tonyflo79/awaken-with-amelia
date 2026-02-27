@@ -686,21 +686,22 @@ em, .italic-accent {
   justify-content: center;
 }
 
-/* Hero: Homepage — Heading + portrait circle + video side-by-side (Renew-style) */
+/* Hero: Homepage — Full-width image, overlaid heading, overlapping portrait circle (Renew-style) */
 .hero--home {
   min-height: auto;
   background: var(--bg-cream);
   flex-direction: column;
   align-items: center;
-  padding: 80px 24px 64px;
-  gap: 24px;
+  padding: 0;
+  gap: 0;
+  overflow: visible;
 }
 
 .hero--home .hero__bg {
   display: none;
 }
 
-/* Brand name above heading */
+/* Brand name on cream above image */
 .hero__brand {
   font-family: var(--font-heading);
   font-size: clamp(1.1rem, 1.8vw, 1.6rem);
@@ -709,57 +710,53 @@ em, .italic-accent {
   text-transform: uppercase;
   color: var(--text-primary);
   text-align: center;
+  padding: 28px 24px 20px;
+  width: 100%;
 }
 
-/* Side-by-side media: circle portrait + video rectangle */
-.hero__media {
+/* Full-width image wrapper — holds rect + overlapping portrait */
+.hero__rect-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* The full-width rectangular image/video */
+.hero__rect {
+  position: relative;
+  width: 100%;
+  min-height: 62vh;
+  overflow: hidden;
   display: flex;
-  gap: 20px;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
-/* Portrait — perfect circle (Renew: border-radius: 999px) */
-.hero__oval {
-  width: clamp(200px, 28vw, 340px);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  overflow: hidden;
-  border: none;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.hero__oval img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Video rectangle alongside portrait */
-.hero__video {
-  flex: 1;
-  border-radius: 0;
-  overflow: hidden;
-  position: relative;
-  background: var(--bg-dark);
-  min-height: 280px;
-}
-
-.hero__video video {
+.hero__rect video,
+.hero__rect > img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  z-index: 0;
 }
 
+/* Subtle overlay on image for text readability */
+.hero__rect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Heading overlaid on the image — upper area */
 .hero--home h1 {
-  color: var(--text-primary);
+  position: relative;
+  z-index: 2;
+  color: #fff;
   margin-bottom: 0;
   font-size: clamp(3rem, 8vw, 7rem);
   text-transform: uppercase;
@@ -767,6 +764,8 @@ em, .italic-accent {
   line-height: 1;
   text-align: center;
   font-weight: 300;
+  padding: 0 24px;
+  margin-top: -5vh;
 }
 
 .hero--home h1 em {
@@ -776,10 +775,32 @@ em, .italic-accent {
   letter-spacing: normal;
 }
 
+/* Circle portrait — overlapping bottom edge of rect into cream below */
+.hero__oval {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: clamp(160px, 20vw, 260px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 3;
+  border: 6px solid var(--bg-cream);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+.hero__oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content below the image — top margin clears the overlapping portrait */
 .hero--home .hero__pre {
   color: var(--accent-sage);
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 12px;
+  margin-top: calc(clamp(80px, 10vw, 130px) + 20px);
 }
 
 .hero--home .hero__sub {
@@ -790,6 +811,11 @@ em, .italic-accent {
   font-size: 1rem;
   line-height: 1.8;
   text-align: center;
+  padding: 0 24px;
+}
+
+.hero--home .hero__cta {
+  padding: 0 24px 64px;
 }
 
 .hero--home .hero__cta .btn {
@@ -2122,27 +2148,38 @@ h1, h2, h3 {
 
   /* Hero home mobile */
   .hero--home {
-    padding: 90px 16px 48px;
-    gap: 16px;
-  }
-
-  .hero__media {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .hero__oval {
-    width: 180px;
-  }
-
-  .hero__video {
-    width: 100%;
-    min-height: 200px;
+    padding: 0;
+    gap: 0;
   }
 
   .hero__brand {
-    display: none;
+    padding: 70px 16px 16px;
+    font-size: 0.9rem;
+  }
+
+  .hero__rect {
+    min-height: 45vh;
+  }
+
+  .hero--home h1 {
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
+    margin-top: 0;
+  }
+
+  .hero__oval {
+    width: 140px;
+  }
+
+  .hero--home .hero__pre {
+    margin-top: calc(70px + 16px);
+  }
+
+  .hero--home .hero__sub {
+    padding: 0 16px;
+  }
+
+  .hero--home .hero__cta {
+    padding: 0 16px 48px;
   }
 
   /* Value section mobile */
