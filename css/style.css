@@ -282,17 +282,19 @@ em, .italic-accent {
 .header__link {
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: color 0.3s;
   position: relative;
   white-space: nowrap;
   padding: 17px 16px;
-  border-right: 1px solid transparent;
+  border: 1px solid transparent;
+  margin-right: -1px;
 }
 
 .header--transparent .header__link {
   color: rgba(255,255,255,0.85);
-  border-right-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.15);
 }
 
 .header--transparent .header__link:hover {
@@ -301,7 +303,7 @@ em, .italic-accent {
 
 .header--solid .header__link {
   color: var(--text-primary);
-  border-right-color: rgba(45, 42, 62, 0.15);
+  border-color: rgba(45, 42, 62, 0.15);
 }
 
 .header--solid .header__link:hover {
@@ -311,7 +313,7 @@ em, .italic-accent {
 /* Light theme header (for pages with light hero backgrounds) */
 .header--transparent[data-theme="light"] .header__link {
   color: var(--text-primary);
-  border-right-color: rgba(45, 42, 62, 0.15);
+  border-color: rgba(45, 42, 62, 0.15);
 }
 
 .header--transparent[data-theme="light"] .header__link:hover {
