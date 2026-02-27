@@ -714,11 +714,12 @@ em, .italic-accent {
   width: 100%;
 }
 
-/* Full-width image wrapper — holds rect + overlapping portrait */
+/* Image wrapper — inset (not full-bleed) to match Renew template */
 .hero__rect-wrap {
   position: relative;
   width: 100%;
   margin-bottom: 0;
+  padding: 0 3%;
 }
 
 /* The full-width rectangular image/video */
@@ -742,17 +743,17 @@ em, .italic-accent {
   z-index: 0;
 }
 
-/* Subtle overlay on image for text readability */
+/* Subtle overlay on image for text readability — matches Renew (0.15 opacity) */
 .hero__rect::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(26, 26, 46, 0.25);
+  background: rgba(26, 26, 46, 0.15);
   z-index: 1;
   pointer-events: none;
 }
 
-/* Heading overlaid on the image — upper area */
+/* Heading overlaid on the image — positioned in upper third like Renew */
 .hero--home h1 {
   position: relative;
   z-index: 2;
@@ -765,7 +766,7 @@ em, .italic-accent {
   text-align: center;
   font-weight: 300;
   padding: 0 24px;
-  margin-top: -5vh;
+  margin-top: -15vh;
 }
 
 .hero--home h1 em {
